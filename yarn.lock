@@ -5,9 +5,9 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@EcoUI@workspace:.":
+"@TheEcho/EcoUI@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@EcoUI@workspace:."
+  resolution: "@TheEcho/EcoUI@workspace:."
   dependencies:
     "@emotion/react": 11.11.1
     "@emotion/styled": 11.11.0
