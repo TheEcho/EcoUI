@@ -2,16 +2,16 @@ import React, { ChangeEvent, FunctionComponent, useState } from 'react'
 
 import { Box } from '../../core'
 import { TStyledBoxProps } from '../../core/Box/Box.styled'
-import { CheckBox, CheckBoxProps } from '../../form/CheckBox'
+import { Checkbox, CheckboxProps } from '../Checkbox'
 import { FormError } from '../FormGroup/FormError'
 import {
-  StyledCheckBoxGroup,
-  StyledCheckBoxGroupDescription,
-  StyledCheckBoxGroupOptionContainer,
+  StyledCheckboxGroup,
+  StyledCheckboxGroupDescription,
+  StyledCheckboxGroupOptionContainer,
 } from './CheckboxGroup.styled'
 import { WithChildren } from '@/types/WithChildren'
 
-export type CheckBoxGroupProps = {
+export type CheckboxGroupProps = {
   /**
    * Name of the group
    */
@@ -27,14 +27,14 @@ export type CheckBoxGroupProps = {
   /**
    * Option list
    */
-  options: CheckBoxProps[]
+  options: CheckboxProps[]
 
   /**
    * Flex direction of the box
    */
   direction?: TStyledBoxProps['direction']
   /**
-   * CheckBox group description
+   * Checkbox group description
    */
   description?: string
   /**
@@ -43,7 +43,7 @@ export type CheckBoxGroupProps = {
   error?: string | boolean
 }
 
-export const CheckBoxGroup: FunctionComponent<CheckBoxGroupProps & WithChildren> = ({
+export const CheckboxGroup: FunctionComponent<CheckboxGroupProps & WithChildren> = ({
   defaultValue,
   selectedValue,
   name,
@@ -71,7 +71,7 @@ export const CheckBoxGroup: FunctionComponent<CheckBoxGroupProps & WithChildren>
   let content = null
   if (options) {
     content = (
-      <StyledCheckBoxGroupOptionContainer
+      <StyledCheckboxGroupOptionContainer
         direction={direction}
         gap={direction === 'row' ? 'large' : 'medium'}
         flex={false}
@@ -79,7 +79,7 @@ export const CheckBoxGroup: FunctionComponent<CheckBoxGroupProps & WithChildren>
         {options.map((item, index) => {
           const selected = values.get(item.id)
           return (
-            <CheckBox
+            <Checkbox
               key={index}
               id={item.id}
               groupName={name}
@@ -91,18 +91,18 @@ export const CheckBoxGroup: FunctionComponent<CheckBoxGroupProps & WithChildren>
             />
           )
         })}
-      </StyledCheckBoxGroupOptionContainer>
+      </StyledCheckboxGroupOptionContainer>
     )
   } else {
     content = children
   }
   return (
-    <StyledCheckBoxGroup direction="column" {...rest} flex={false}>
+    <StyledCheckboxGroup direction="column" {...rest} flex={false}>
       {description ? (
         <Box margin="none" marginBottom="small">
-          <StyledCheckBoxGroupDescription variant="object-list-item-title" color="text-dark">
+          <StyledCheckboxGroupDescription variant="object-list-item-title" color="text-dark">
             {description}
-          </StyledCheckBoxGroupDescription>
+          </StyledCheckboxGroupDescription>
         </Box>
       ) : null}
       {content}
@@ -111,6 +111,6 @@ export const CheckBoxGroup: FunctionComponent<CheckBoxGroupProps & WithChildren>
           <FormError>{error}</FormError>
         </Box>
       )}
-    </StyledCheckBoxGroup>
+    </StyledCheckboxGroup>
   )
 }

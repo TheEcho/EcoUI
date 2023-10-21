@@ -4,13 +4,13 @@ import { Box, BoxProps } from '../../core/Box'
 import { TextProps } from '../../core/Text'
 import {
   OptionalElementContainer,
-  StyledCheckBox,
-  StyledCheckBoxInput,
-  StyledCheckBoxLabel,
-  StyledCheckBoxLabelText,
-} from './CheckBox.styled'
+  StyledCheckbox,
+  StyledCheckboxInput,
+  StyledCheckboxLabel,
+  StyledCheckboxLabelText,
+} from './Checkbox.styled'
 
-export type CheckBoxProps = {
+export type CheckboxProps = {
   id: string
   groupName?: string
   value?: string
@@ -24,7 +24,7 @@ export type CheckBoxProps = {
   variant?: 'primary' | 'secondary'
 } & BoxProps
 
-export const CheckBox: FunctionComponent<CheckBoxProps> = ({
+export const Checkbox: FunctionComponent<CheckboxProps> = ({
   id,
   isSelected,
   groupName,
@@ -60,9 +60,9 @@ export const CheckBox: FunctionComponent<CheckBoxProps> = ({
   }, [disabled, isSelected, variant])
 
   return (
-    <StyledCheckBox {...rest} direction="column">
+    <StyledCheckbox {...rest} direction="column">
       <Box direction="row">
-        <StyledCheckBoxInput
+        <StyledCheckboxInput
           id={id}
           type="checkbox"
           name={groupName}
@@ -76,25 +76,25 @@ export const CheckBox: FunctionComponent<CheckBoxProps> = ({
           variant={variant}
         />
 
-        <StyledCheckBoxLabel disabled={disabled} htmlFor={id}>
+        <StyledCheckboxLabel disabled={disabled} htmlFor={id}>
           {label && (
             <>
               {typeof label === 'string' ? (
-                <StyledCheckBoxLabelText size="regular" {...textProps} rounded={rounded}>
+                <StyledCheckboxLabelText size="regular" {...textProps} rounded={rounded}>
                   {label}
-                </StyledCheckBoxLabelText>
+                </StyledCheckboxLabelText>
               ) : (
                 label
               )}
             </>
           )}
-        </StyledCheckBoxLabel>
+        </StyledCheckboxLabel>
       </Box>
       {optionalElement && (
         <OptionalElementContainer direction="row" margin="none">
           {optionalElement ? optionalElement : null}
         </OptionalElementContainer>
       )}
-    </StyledCheckBox>
+    </StyledCheckbox>
   )
 }

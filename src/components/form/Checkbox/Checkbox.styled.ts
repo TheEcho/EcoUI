@@ -6,16 +6,16 @@ import { ITheme } from '@/index'
 import Box, { BoxProps } from '../../core/Box'
 import { Text } from '../../core/Text'
 
-type TStyledCheckBoxProps = {
+type TStyledCheckboxProps = {
   disabled?: boolean
   label?: ReactElement | string
   rounded?: boolean
   variant?: 'primary' | 'secondary'
 } & BoxProps
 
-type TStyledCheckBoxPropsWithTheme = TStyledCheckBoxProps & { theme: ITheme }
+type TStyledCheckboxPropsWithTheme = TStyledCheckboxProps & { theme: ITheme }
 
-export const StyledCheckBoxLabelText = styled(Text)<{ rounded: boolean }>(({ rounded }) => {
+export const StyledCheckboxLabelText = styled(Text)<{ rounded: boolean }>(({ rounded }) => {
   return {
     flex: 1,
     lineHeight: !!rounded ? '1.6rem' : '2rem',
@@ -26,7 +26,7 @@ const getBasicCheckbox = ({
   theme,
   label,
   rounded,
-}: TStyledCheckBoxPropsWithTheme): CSSObject => {
+}: TStyledCheckboxPropsWithTheme): CSSObject => {
   return {
     content: "''",
     width: rounded ? '1.6rem' : '2rem',
@@ -40,7 +40,7 @@ const getBasicCheckbox = ({
 const getCheckboxMark = ({
   theme,
   rounded,
-}: TStyledCheckBoxPropsWithTheme): CSSObject => {
+}: TStyledCheckboxPropsWithTheme): CSSObject => {
   return {
     ':checked + label:after, :not(:checked) + label:after': {
       content: "''",
@@ -56,7 +56,7 @@ const getCheckboxMark = ({
   }
 }
 
-export const StyledCheckBoxInput = styled.input<TStyledCheckBoxProps>(
+export const StyledCheckboxInput = styled.input<TStyledCheckboxProps>(
   ({ theme, label, rounded, variant }) => {
     const basicCheckboxStyle = getBasicCheckbox({ theme, label, rounded })
 
@@ -103,7 +103,7 @@ export const StyledCheckBoxInput = styled.input<TStyledCheckBoxProps>(
   },
 )
 
-export const StyledCheckBoxLabel = styled.label<TStyledCheckBoxProps>(({ disabled, theme }) => {
+export const StyledCheckboxLabel = styled.label<TStyledCheckboxProps>(({ disabled, theme }) => {
   return {
     position: 'relative',
     cursor: 'pointer',
@@ -121,7 +121,7 @@ export const OptionalElementContainer = styled(Box)(() => {
   }
 })
 
-export const StyledCheckBox = styled(Box)(() => {
+export const StyledCheckbox = styled(Box)(() => {
   return {
     minWidth: 'initial',
   }

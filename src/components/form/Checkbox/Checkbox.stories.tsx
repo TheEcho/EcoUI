@@ -4,21 +4,21 @@ import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box, Icon, Text } from '../../core'
-import { Input } from '../../form'
-import { CheckBox } from './CheckBox'
+import { Input } from '..'
+import { Checkbox } from './Checkbox'
 
 export default {
-  title: 'Core/Form/CheckBox',
+  title: 'Core/Form/Checkbox',
   decorators: [withKnobs],
-  component: CheckBox,
+  component: Checkbox,
 }
 
-const onChangeAction = action('onChange CheckBox')
+const onChangeAction = action('onChange Checkbox')
 
 export const SimpleNotChecked: FunctionComponent = () => {
   return (
     <Box margin="small">
-      <CheckBox
+      <Checkbox
         id="no"
         label="Cette radio n'est pas sélectionnée"
         groupName="nop"
@@ -32,7 +32,7 @@ export const SimpleNotChecked: FunctionComponent = () => {
 export const Default = () => {
   return (
     <Box width={5} justify="center">
-      <CheckBox
+      <Checkbox
         flex={false}
         id="no"
         label=""
@@ -46,7 +46,7 @@ export const Default = () => {
 
 export const CustomLabelWithOptionalElement = () => (
   <Box margin="small">
-    <CheckBox
+    <Checkbox
       id="no"
       label={
         <Box direction="row" gap="small" align="center" flex={false}>
@@ -68,7 +68,7 @@ export const CustomLabelWithOptionalElement = () => (
 export const MultiLine: FunctionComponent = () => {
   return (
     <Box maxWidth={20} margin="small">
-      <CheckBox
+      <Checkbox
         id="no"
         label="Cette radio n'est pas sélectionnée"
         groupName="nop"
@@ -82,7 +82,7 @@ export const MultiLine: FunctionComponent = () => {
 export const DisabledCheckbox: FunctionComponent = () => {
   return (
     <Box margin="small">
-      <CheckBox
+      <Checkbox
         id="disabled"
         label="Cette radio ne peut pas être coché"
         isSelected={false}
@@ -96,7 +96,7 @@ export const DisabledCheckbox: FunctionComponent = () => {
 export const SimpleChecked: FunctionComponent = () => {
   return (
     <Box margin="small">
-      <CheckBox
+      <Checkbox
         id="yes"
         label="Cette radio est sélectionnée"
         groupName="yes"
@@ -112,7 +112,7 @@ export const CheckboxRounded: FunctionComponent = () => {
 
   return (
     <Box margin="small">
-      <CheckBox
+      <Checkbox
         rounded
         id="yes"
         label="Cette radio est sélectionnée"
@@ -129,7 +129,7 @@ export const CheckboxVariants: FunctionComponent = () => {
 
   return (
     <Box margin="small" direction="row" gap="xlarge" align="center">
-      <CheckBox
+      <Checkbox
         flex={false}
         variant="primary"
         id="yes"
@@ -138,7 +138,7 @@ export const CheckboxVariants: FunctionComponent = () => {
         isSelected={isChecked}
         onChange={(e) => setIsChecked(e.target.checked)}
       />
-      <CheckBox
+      <Checkbox
         flex={false}
         variant="secondary"
         rounded
@@ -155,7 +155,7 @@ export const CheckboxVariants: FunctionComponent = () => {
 export const WithOptionalElement: FunctionComponent = () => {
   return (
     <Box margin="small">
-      <CheckBox
+      <Checkbox
         id="yes"
         label="Cette radio est sélectionnée"
         groupName="yes"

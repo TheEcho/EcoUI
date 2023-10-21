@@ -3,7 +3,7 @@ import React, { FunctionComponent } from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box } from '../../core'
-import { Input } from '../../form'
+import { Input } from '..'
 import { CheckBoxProps } from '../CheckBox'
 import { CheckBoxGroup } from './CheckboxGroup'
 

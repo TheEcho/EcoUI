@@ -1,14 +1,13 @@
 import styled from '@emotion/styled'
-import { ITheme } from '@/index'
 
 import { Box } from '../../core/Box'
 import { Heading } from '../../core/Heading'
 
-export const StyledCheckBoxGroupDescription = styled(Heading)`
+export const StyledCheckboxGroupDescription = styled(Heading)`
   font-weight: ${(props) => props.theme.text.weight.medium};
 `
 
-export const StyledCheckBoxGroupOptionContainer = styled(Box)`
+export const StyledCheckboxGroupOptionContainer = styled(Box)`
   & > * {
     margin-bottom: 1.2rem;
     :last-child {
@@ -17,4 +16,4 @@ export const StyledCheckBoxGroupOptionContainer = styled(Box)`
   }
 `
 
-export const StyledCheckBoxGroup = styled(Box)``
+export const StyledCheckboxGroup = styled(Box)``
