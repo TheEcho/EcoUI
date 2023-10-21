@@ -3,11 +3,12 @@ import { isMobile } from 'react-device-detect'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import { TColor } from '../../../shared/tokens/color'
 import { TTextWeight } from '../../../shared/tokens/text'
-import { Box, Icon, IconProps, Tag } from '../../core'
 import { Text } from '../Text'
 import { StyledActionListContent, StyledActionListItem } from './ActionListItem.styled'
 import { WithChildren } from '@/types/WithChildren'
-import { ReactNode } from 'react'
+import Icon, { IconProps } from '../Icon'
+import Box from '../Box'
+import { Tag } from '../Tag'
 
 type ActionListItemTitleProps = {
   color: TColor

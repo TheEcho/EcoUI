@@ -1,11 +1,13 @@
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent } from 'react'
 import { isMobile } from 'react-device-detect'
 
-import { Box, Heading, Icon, IconProps } from '../../core'
 import { renderActionListItems } from './ActionList'
 import { ActionListItemProps } from './ActionListItem'
 import { StyledActionListSection } from './ActionListSection.styled'
 import { WithChildren } from '@/types/WithChildren'
+import Box from '../Box'
+import Icon, { IconProps } from '../Icon'
+import { Heading } from '../Heading'
 
 export type ActionListSectionProps = {
   title?: string

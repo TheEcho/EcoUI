@@ -1,7 +1,7 @@
+import { ITheme } from '@/shared/tokens'
 import { css, SerializedStyles } from '@emotion/react'
 import styled from '@emotion/styled'
-
-import { ITheme, Card } from '@/index'
+import { Card } from '../Card'
 
 export type TActionListProps = {
   variants?: 'with-input'
