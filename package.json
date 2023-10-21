@@ -11,6 +11,9 @@
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "build": "rollup -c --bundleConfigAsCjs"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TheEcho/EchoUI.git"
