@@ -1,4 +1,4 @@
-# Echo UI Design System
+# Eco UI Design System
 
 ## Installation
 
