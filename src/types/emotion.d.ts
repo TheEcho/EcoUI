@@ -1,8 +1,8 @@
 import '@emotion/react'
 
-import { ITheme, ITheme as INewTheme } from '@/index'
+import { ITheme } from '@/index'
 
-type FullTheme = ITheme & { new: INewTheme }
+type FullTheme = ITheme & { new: ITheme }
 
 declare module '@emotion/react' {
   // eslint-disable-next-line

@@ -1,4 +1,5 @@
 import { ComponentProps, ElementType, forwardRef, PropsWithChildren, ReactNode } from 'react'
+import { ArrowPathIcon } from '@heroicons/react/24/outline'
 
 import { SerializedStyles } from '@emotion/react'
 
@@ -158,7 +159,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
       loadingContent = (
         <LoaderContainer size={loadingSize}>
-          <Icon icon="icon-load" size={loadingSize} color={loadingColor} spinning />
+          <Icon icon={<ArrowPathIcon />} size={loadingSize} color={loadingColor} spinning />
         </LoaderContainer>
       )
     }

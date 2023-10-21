@@ -1,5 +1,5 @@
 {
-  "name": "echo-ui",
+  "name": "EchoUI",
   "version": "1.0.0",
   "description": "Echo UI Design System",
   "license": "MIT",
@@ -9,10 +9,16 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
-    "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook",
     "build": "rollup -c --bundleConfigAsCjs"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheEcho/EchoUI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheEcho/EchoUI/issues"
+  },
+  "homepage": "https://github.com/TheEcho/EchoUI#readme",
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",

@@ -39,10 +39,6 @@ export type TooltipProps = {
    */
   type?: 'dark' | 'success' | 'warning' | 'error' | 'info' | 'light'
   /**
-   * Solid = static | float = follow mouse cursor
-   */
-  effect?: 'solid' | 'float'
-  /**
    * Should hide tooltip
    */
   hideTooltip?: boolean
@@ -57,7 +53,6 @@ export const NonWrappingTooltip: FunctionComponent<TooltipProps> = memo(
     label,
     place = 'top',
     type = 'dark',
-    effect = 'solid',
     hideTooltip = false,
     children,
     delayShow,
@@ -89,9 +84,7 @@ export const NonWrappingTooltip: FunctionComponent<TooltipProps> = memo(
           <StyledTooltip
             id={id}
             place={place}
-            type={type}
-            effect={effect}
-            multiline={true}
+            variant={type}
             delayShow={delayShow}
           >
             {typeof label === 'string' ? <span>{label}</span> : label}

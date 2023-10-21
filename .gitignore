@@ -19,6 +19,7 @@ node_modules/
 /build
 /storybook-static
 /dist
+.rollup.cache
 
 # misc
 .DS_Store

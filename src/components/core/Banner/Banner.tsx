@@ -1,4 +1,5 @@
 import { FunctionComponent, ReactNode } from 'react'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 
 import { Icon, Paragraph } from '../../core'
 import Box, { BoxProps } from '../Box'
@@ -62,7 +63,7 @@ export const Banner: FunctionComponent<BannerProps> = ({
       </StyledBannerContent>
       {onClose && (
         <Box flex={false} justify="center" onClick={onClose}>
-          <Icon icon="icon-close" size="medium" color={bannerConfig.textColor} />
+          <Icon icon={<XMarkIcon />} size="medium" color={bannerConfig.textColor} />
         </Box>
       )}
     </StyledBanner>

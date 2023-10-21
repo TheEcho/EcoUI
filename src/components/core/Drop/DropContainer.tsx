@@ -1,5 +1,6 @@
-import { FunctionComponent, ReactNode, useCallback, useEffect, useRef } from 'react'
+import { FunctionComponent, useCallback, useEffect, useRef } from 'react'
 import { isMobile } from 'react-device-detect'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 
 import { useCombinedRefs } from '../../../components/form/Input/utils'
 import { findScrollParents } from '../../../utils/DOM'
@@ -193,7 +194,7 @@ TODO: améliorer le swipe
               </Text>
             )}
             <StyledButton
-              icon={<Icon icon="fal fa-times" size="medium" />}
+              icon={<Icon icon={<XMarkIcon />} size="medium" />}
               onClick={closePanelMobile}
               variant="text"
             />

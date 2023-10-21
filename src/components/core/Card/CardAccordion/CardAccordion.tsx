@@ -1,7 +1,8 @@
 import React, { FunctionComponent, ReactElement, ReactNode, useState } from 'react'
+import { ChevronUpIcon } from '@heroicons/react/24/outline'
 
 import { matchComponentName } from '../../../../utils/matchComponentName'
-import { Box, Icon } from '../..'
+import { Box, Icon, IconProps } from '../..'
 import { BoxProps } from '../../Box'
 import { CardProps } from '../Card'
 import { StyledCardAccordion, StyledCardAccordionHeaderSuffix } from './CardAccordion.styled'
@@ -18,7 +19,7 @@ type CardAccordionProps = {
   onActionClick?: (action: Action) => void
   isOpen?: (open: boolean) => void
   suffixHeaderComponent?: ReactNode
-  arrowIconComponent?: ReactNode
+  arrowIconComponent?: IconProps['icon']
   open?: boolean
   onToggle?: () => void
 } & CardProps
@@ -119,7 +120,7 @@ export const CardAccordion: FunctionComponent<CardAccordionProps> = ({
           {arrowIconComponent ? (
             arrowIconComponent
           ) : (
-            <Icon icon="front-expand-arrow" color="border-dark" rotate={open ? 180 : 0} />
+            <Icon icon={<ChevronUpIcon />} color="border-dark" rotate={open ? 180 : 0} />
           )}
         </Box>
       </StyledCardAccordionHeaderSuffix>
