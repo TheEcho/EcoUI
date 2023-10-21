@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 
 import { getNewContainer, removeContainer } from '../../../utils/DOM'
 import { DropContainer, DropContainerProps } from './DropContainer'
+import { WithChildren } from '@/types/WithChildren'
 
 const useContainer = (): HTMLDivElement | null => {
   const [container] = useState<HTMLDivElement>(getNewContainer())
@@ -28,7 +29,7 @@ export type DropProps = {
   titleMobile?: string
 } & DropContainerProps
 
-export const Drop: FunctionComponent<DropProps> = ({ children, ...rest }) => {
+export const Drop: FunctionComponent<DropProps & WithChildren> = ({ children, ...rest }) => {
   const dropContainer = useContainer()
 
   if (!dropContainer) {

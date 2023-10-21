@@ -38,9 +38,9 @@ export type DropContainerProps = {
   noMobileFormat?: boolean
   titleMobile?: string
   width?: number
-} & Pick<StyledDropProps, 'elevation' | 'borderRadius' | 'maxHeight'> & WithChildren
+} & Pick<StyledDropProps, 'elevation' | 'borderRadius' | 'maxHeight'>
 
-export const DropContainer: FunctionComponent<DropContainerProps> = ({
+export const DropContainer: FunctionComponent<DropContainerProps & WithChildren> = ({
   dropAlign = {
     top: 'bottom',
     left: 'left',
