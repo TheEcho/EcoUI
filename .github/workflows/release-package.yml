@@ -15,9 +15,9 @@ jobs:
           node-version: '20.x'
       - name: Setup .yarnrc.yml
         run: |
-          yarn config set npmScopes.TheEcho.npmRegistryServer "https://npm.pkg.github.com"
-          yarn config set npmScopes.TheEcho.npmAlwaysAuth true
-          yarn config set npmScopes.TheEcho.npmAuthToken $NODE_AUTH_TOKEN
+          yarn config set npmScopes.theecho.npmRegistryServer "https://npm.pkg.github.com"
+          yarn config set npmScopes.theecho.npmAlwaysAuth true
+          yarn config set npmScopes.theecho.npmAuthToken $NODE_AUTH_TOKEN
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn install --immutable
