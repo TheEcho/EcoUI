@@ -1,22 +1,23 @@
 # .github/workflows/release-package.yml
-name: on release
-
+name: Publish package to Github
 on:
   release:
-    types: [created]
-
+    types: [published]
 jobs:
   publish-github-registry:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: 20.x
           registry-url: https://npm.pkg.github.com/
-          scope: '@EcoUI'
+          scope: '@TheEcho'
       - run: yarn install
       - run: yarn build
-      - run: npm publish
+      - run: yarn npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
