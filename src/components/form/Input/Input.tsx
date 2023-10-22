@@ -1,6 +1,7 @@
 import {
   FunctionComponent,
   ReactNode,
+  forwardRef,
   useCallback,
   useLayoutEffect,
   useMemo,
@@ -37,7 +38,6 @@ export type InputProps = {
   css?: SerializedStyles
   type?: 'text' | 'password' | 'search' | 'number'
   inputMode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'
-  forwardRef?: React.Ref<HTMLInputElement>
   containerForwardRef?: React.Ref<HTMLDivElement>
   background?: InputContainerProps['background']
   rounded?: InputContainerProps['rounded']
@@ -61,7 +61,7 @@ export type InputProps = {
   iconClicked?: () => void
 }
 
-export const Input: FunctionComponent<InputProps> = ({
+export const Input = forwardRef<HTMLInputElement, InputProps>(({
   value,
   error,
   prefix,
@@ -79,7 +79,6 @@ export const Input: FunctionComponent<InputProps> = ({
   textWeight = 'regular',
   inputSize = 'default',
   variant = 'default',
-  forwardRef,
   containerForwardRef,
   maxWidth,
   iconClicked,
@@ -88,7 +87,7 @@ export const Input: FunctionComponent<InputProps> = ({
   allowDecimal = true,
   inputMode,
   ...rest
-}) => {
+}, ref) => {
   const [isHover, setIsHover] = useState(false)
   const [isInputFocus, setIsInputFocus] = useState(false)
   const [resetBtnHover, setResetBtnHover] = useState(false)
@@ -101,15 +100,15 @@ export const Input: FunctionComponent<InputProps> = ({
   const combinedContainerRef = useCombinedRefs(containerForwardRef, containerRef)
 
   const inputRef = useRef<HTMLInputElement | null>(
-    forwardRef && typeof forwardRef !== 'function' ? forwardRef.current : null,
+    ref && typeof ref !== 'function' ? ref.current : null,
   )
-  const combinedRef = useCombinedRefs(forwardRef, inputRef)
+  const combinedRef = useCombinedRefs(ref, inputRef)
 
   useLayoutEffect(() => {
-    if (typeof forwardRef === 'function' && inputRef.current) {
-      forwardRef(inputRef.current)
+    if (typeof ref === 'function' && inputRef.current) {
+      ref(inputRef.current)
     }
-  }, [inputRef, forwardRef])
+  }, [inputRef, ref])
 
   const focusInput = (): void => inputRef.current?.focus()
 
@@ -204,7 +203,7 @@ export const Input: FunctionComponent<InputProps> = ({
       {suffixContent}
     </InputContainer>
   )
-}
+})
 
 /**
  * Use this input when the field can be clear

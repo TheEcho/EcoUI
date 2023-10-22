@@ -22,7 +22,7 @@ export type InputContainerProps = {
   Pick<InputProps, 'error' | 'css' | 'autoFocus'>
 
 export type StyledInputProps = {
-  ref?: InputProps['forwardRef']
+  ref?: React.Ref<HTMLInputElement>
   textColor: 'text' | 'text-lighter' | 'secondary' | 'text-dark'
   textWeight: TTextWeight
   textSize: TTextSize
