@@ -22,7 +22,7 @@ export const SimpleNotChecked: FunctionComponent = () => {
         id="no"
         label="Cette radio n'est pas sélectionnée"
         groupName="nop"
-        isSelected={false}
+        checked={false}
         onChange={onChangeAction}
       />
     </Box>
@@ -37,7 +37,7 @@ export const Default = () => {
         id="no"
         label=""
         groupName="nop"
-        isSelected={false}
+        checked={false}
         onChange={onChangeAction}
       />
     </Box>
@@ -72,7 +72,7 @@ export const MultiLine: FunctionComponent = () => {
         id="no"
         label="Cette radio n'est pas sélectionnée"
         groupName="nop"
-        isSelected={false}
+        checked={false}
         onChange={onChangeAction}
       />
     </Box>
@@ -85,7 +85,7 @@ export const DisabledCheckbox: FunctionComponent = () => {
       <Checkbox
         id="disabled"
         label="Cette radio ne peut pas être coché"
-        isSelected={false}
+        checked={false}
         onChange={onChangeAction}
         disabled
       />
@@ -100,7 +100,7 @@ export const SimpleChecked: FunctionComponent = () => {
         id="yes"
         label="Cette radio est sélectionnée"
         groupName="yes"
-        isSelected={true}
+        checked={true}
         onChange={onChangeAction}
       />
     </Box>
@@ -117,7 +117,7 @@ export const CheckboxRounded: FunctionComponent = () => {
         id="yes"
         label="Cette radio est sélectionnée"
         groupName="yes"
-        isSelected={isChecked}
+        checked={isChecked}
         onChange={(e) => setIsChecked(e.target.checked)}
       />
     </Box>
@@ -135,7 +135,7 @@ export const CheckboxVariants: FunctionComponent = () => {
         id="yes"
         label="Cette radio est sélectionnée"
         groupName="yes"
-        isSelected={isChecked}
+        checked={isChecked}
         onChange={(e) => setIsChecked(e.target.checked)}
       />
       <Checkbox
@@ -145,7 +145,7 @@ export const CheckboxVariants: FunctionComponent = () => {
         id="yes"
         label="Cette radio est sélectionnée"
         groupName="yes"
-        isSelected={isChecked}
+        checked={isChecked}
         onChange={(e) => setIsChecked(e.target.checked)}
       />
     </Box>
@@ -159,7 +159,7 @@ export const WithOptionalElement: FunctionComponent = () => {
         id="yes"
         label="Cette radio est sélectionnée"
         groupName="yes"
-        isSelected={true}
+        checked={true}
         optionalElement={<Input suffix="€ HT" />}
         onChange={onChangeAction}
       />

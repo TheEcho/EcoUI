@@ -16,7 +16,7 @@ export type CheckboxProps = {
   value?: string
   label?: ReactElement | string
   optionalElement?: ReactNode
-  isSelected?: boolean
+  checked?: boolean
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
   forwardRef?: React.Ref<HTMLInputElement>
   disabled?: boolean
@@ -26,7 +26,7 @@ export type CheckboxProps = {
 
 export const Checkbox: FunctionComponent<CheckboxProps> = ({
   id,
-  isSelected,
+  checked,
   groupName,
   value,
   label,
@@ -47,7 +47,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
       }
     }
 
-    if (isSelected) {
+    if (checked) {
       return {
         color: isSecondary ? 'secondary' : 'text-dark',
         weight: isSecondary ? 'medium' : 'regular',
@@ -57,7 +57,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
     return {
       color: 'text',
     }
-  }, [disabled, isSelected, variant])
+  }, [disabled, checked, variant])
 
   return (
     <StyledCheckbox {...rest} direction="column">
@@ -68,7 +68,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
           name={groupName}
           label={label}
           value={value}
-          checked={isSelected}
+          checked={checked}
           onChange={onChange}
           ref={forwardRef}
           disabled={disabled}

@@ -5,7 +5,6 @@ import { ITheme } from '@/index'
 
 import { decorationStyle } from '../../../utils'
 import { Text, TextProps } from '../Text'
-import { ReactNode } from 'react'
 import { WithChildren } from '@/types/WithChildren'
 
 export type StyledLinkPropsWithTheme = { theme: ITheme } & StyledLinkProps

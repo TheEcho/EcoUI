@@ -21,10 +21,6 @@ export type CheckboxGroupProps = {
    */
   defaultValue?: Map<string, boolean>
   /**
-   * Selected value
-   */
-  selectedValue?: string
-  /**
    * Option list
    */
   options: CheckboxProps[]
@@ -45,7 +41,6 @@ export type CheckboxGroupProps = {
 
 export const CheckboxGroup: FunctionComponent<CheckboxGroupProps & WithChildren> = ({
   defaultValue,
-  selectedValue,
   name,
   options,
   direction = 'row',
@@ -55,7 +50,7 @@ export const CheckboxGroup: FunctionComponent<CheckboxGroupProps & WithChildren>
   ...rest
 }) => {
   const defaultValues = new Map<string, boolean>(
-    options.map((o) => [o.id, o.isSelected] as [string, boolean]),
+    options.map((o) => [o.id, o.checked] as [string, boolean]),
   )
   const initialValue = defaultValues || new Map<string, boolean>()
 
@@ -63,8 +58,8 @@ export const CheckboxGroup: FunctionComponent<CheckboxGroupProps & WithChildren>
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     const id = event.target.id
-    const isSelected = event.target.checked
-    values.set(id, isSelected)
+    const checked = event.target.checked
+    values.set(id, checked)
     setValues(new Map(values))
   }
 
@@ -86,7 +81,7 @@ export const CheckboxGroup: FunctionComponent<CheckboxGroupProps & WithChildren>
               label={item.label}
               value={item.value}
               optionalElement={item.optionalElement}
-              isSelected={selected}
+              checked={selected}
               onChange={onChange}
             />
           )
