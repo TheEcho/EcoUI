@@ -12,7 +12,3 @@ export const CardAccordionHeader: FunctionComponent<CardAccordionHeaderProps> = 
 }) => {
   return <Box {...props}>{children}</Box>
 }
-
-CardAccordionHeader.defaultProps = {
-  componentName: 'CardAccordionHeader',
-}

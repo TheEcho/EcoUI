@@ -36,8 +36,4 @@ export const SideBarSection: FunctionComponent<SideBarSectionProps> = ({
   )
 }
 
-SideBarSection.defaultProps = {
-  componentName: 'SideBarSection',
-} as TProps & { componentName: string }
-
 export type SideBarSectionProps = TProps

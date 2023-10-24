@@ -68,7 +68,3 @@ export const CardAccordionActions: FunctionComponent<CardAccordionActionsProps> 
     </StyledCardAccordionActions>
   )
 }
-
-CardAccordionActions.defaultProps = {
-  componentName: 'CardAccordionActions',
-}

@@ -35,7 +35,3 @@ export const CardAccordionContent: FunctionComponent<CardAccordionContentProps> 
     </StyledCardAccordionContent>
   )
 }
-
-CardAccordionContent.defaultProps = {
-  componentName: 'CardAccordionContent',
-}

@@ -26,7 +26,3 @@ export const CardAccordionAction: FunctionComponent<CardAccordionActionProps> = 
     </Button>
   )
 }
-
-CardAccordionAction.defaultProps = {
-  componentName: 'CardAccordionAction',
-}

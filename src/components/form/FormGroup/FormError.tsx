@@ -9,7 +9,7 @@ type FormErrorProps = {
   withIcon?: boolean
 } & TextProps
 
-export const FormError: FunctionComponent<FormErrorProps> = ({ withIcon, children, ...props }) => {
+export const FormError: FunctionComponent<FormErrorProps> = ({ withIcon = true, children, ...props }) => {
   return (
     <Box direction="row" align="start" gap="medium" flex={false}>
       {withIcon && (
@@ -22,10 +22,6 @@ export const FormError: FunctionComponent<FormErrorProps> = ({ withIcon, childre
       </Text>
     </Box>
   )
-}
-
-FormError.defaultProps = {
-  withIcon: true,
 }
 
 export default FormError

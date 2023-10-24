@@ -50,7 +50,7 @@ export const DropContainer: FunctionComponent<DropContainerProps & WithChildren>
   children,
   targetMargin,
   fitTarget = false,
-  dropStyle,
+  dropStyle = 'card',
   maxHeight,
   forwardRef,
   isDropBorderVisible = false,
@@ -273,10 +273,6 @@ TODO: améliorer le swipe
         return <></>
     }
   }
-}
-
-DropContainer.defaultProps = {
-  dropStyle: 'card',
 }
 
 export default DropContainer
