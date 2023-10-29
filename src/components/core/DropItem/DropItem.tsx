@@ -59,7 +59,7 @@ export const DropItem: FunctionComponent<DropItemProps> = ({
     >
       <Box align="center" {...(isMobile && { height: 3.2 })} gap="medium" direction="row">
         {icon}
-        {!!title && <Text size={isMobile ? 'large' : 'regular'} title={title} />}
+        {!!title && <Text size={isMobile ? 'large' : 'regular'}>{title}</Text>}
         {!!children && <Box>{children}</Box>}
       </Box>
     </Box>

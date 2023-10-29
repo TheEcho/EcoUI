@@ -7,15 +7,15 @@ export const StyledCardAccordionContent = styled(Box)`
     padding-bottom: ${(props) => props.theme.spacing.padding.small};
     padding-top: ${(props) => props.theme.spacing.padding.small};
 
-    &:first-child {
+    &:first-of-type {
       padding-top: 0;
     }
 
-    &:last-child {
+    &:last-of-type {
       padding-bottom: 0;
     }
 
-    &:not(:last-child) {
+    &:not(:last-of-type) {
       border-bottom: ${(props) =>
         `${props.theme.border.size.xsmall} solid ${props.theme.color.border}`};
     }

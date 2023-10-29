@@ -1,4 +1,4 @@
-import React, { ElementType, FunctionComponent, ReactNode } from 'react'
+import { ElementType, FunctionComponent } from 'react'
 
 import {
   BaseHeading,
@@ -88,7 +88,7 @@ export const StyledHeadingComponents: {
 /**
  * Heading component
  */
-export const Heading: FunctionComponent<HeadingProps> = ({ variant, as: asProp, ...rest }) => {
+export const Heading = ({ variant, as: asProp, ...rest }: HeadingProps) => {
   const StyledHeading = StyledHeadingComponents[variant].component
   const as = asProp || StyledHeadingComponents[variant].as
 

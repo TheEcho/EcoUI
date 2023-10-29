@@ -106,7 +106,7 @@ export function InputSearchDropdown<T>(props: InputSearchDropdownProps<T>): Reac
   return (
     <div>
       <Input
-        forwardRef={forwardRef}
+        ref={forwardRef}
         prefix={SearchIcon}
         placeholder={props.placeholder}
         value={textValue || query}

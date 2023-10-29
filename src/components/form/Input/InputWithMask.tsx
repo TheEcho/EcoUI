@@ -1,11 +1,11 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, forwardRef } from 'react'
 import InputMask, { Props as MaskOptions } from 'react-input-mask'
 
 import Input, { InputProps } from './Input'
 
 type TProps = { mask?: string } & InputProps & Partial<Omit<MaskOptions, 'autoComplete' | 'prefix'>>
 
-export const InputWithMask: FunctionComponent<TProps> = ({
+export const InputWithMask = forwardRef<HTMLInputElement, TProps>(({
   value,
   onChange,
   onFocus,
@@ -13,12 +13,11 @@ export const InputWithMask: FunctionComponent<TProps> = ({
   mask = '',
   maskChar,
   alwaysShowMask,
-  forwardRef,
   onKeyPress,
   onKeyDown,
   disabled,
   ...props
-}) => {
+}, ref) => {
   const inputProps = {
     value,
     onChange,
@@ -33,7 +32,7 @@ export const InputWithMask: FunctionComponent<TProps> = ({
     mask,
     maskChar,
     alwaysShowMask,
-    inputRef: forwardRef,
+    inputRef: ref,
   }
 
   return mask ? (
@@ -41,8 +40,8 @@ export const InputWithMask: FunctionComponent<TProps> = ({
       <Input {...props} />
     </InputMask>
   ) : (
-    <Input {...props} {...inputProps} forwardRef={forwardRef} />
+    <Input {...props} {...inputProps} ref={ref} />
   )
-}
+})
 
 export type TInputWithMaskProps = TProps

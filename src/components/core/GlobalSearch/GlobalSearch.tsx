@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useMemo, useRef, useState } from 'react'
+import { FunctionComponent, forwardRef, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
@@ -15,16 +15,15 @@ type TProps = {
   onClickOutside?: () => void
 } & TInputSelectAutocomplete
 
-export const GlobalSearch: FunctionComponent<TProps> = ({
+export const GlobalSearch = forwardRef<HTMLInputElement, TProps>(({
   onDropStateChange,
-  forwardRef,
   onClickOutside,
   ...props
-}) => {
+}, ref) => {
   const [isDropOpen, setIsDropOpen] = useState(false)
 
   const inputRef = useRef<HTMLInputElement | null>(null)
-  const combinedInputRef = useCombinedRefs(forwardRef, inputRef)
+  const combinedInputRef = useCombinedRefs(ref, inputRef)
 
   const bodyRef = useRef<HTMLBodyElement>(document.querySelector('body'))
   const containerRef = useRef<HTMLDivElement>(null)
@@ -68,7 +67,7 @@ export const GlobalSearch: FunctionComponent<TProps> = ({
         variant="no-border"
         prefix={<Icon icon={<MagnifyingGlassIcon />} color="text-light" />}
         textSize="large"
-        forwardRef={combinedInputRef}
+        ref={combinedInputRef}
         onDropStateChange={handleDropState}
         dropRef={dropRef}
         {...props}
@@ -76,7 +75,7 @@ export const GlobalSearch: FunctionComponent<TProps> = ({
     </StyledContainer>,
     bodyRef.current,
   )
-}
+})
 
 export type TGlobalSearchProps = TProps
 

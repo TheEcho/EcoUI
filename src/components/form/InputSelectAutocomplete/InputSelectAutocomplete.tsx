@@ -1,6 +1,7 @@
 import React, {
   FunctionComponent,
   ReactNode,
+  forwardRef,
   useCallback,
   useEffect,
   useMemo,
@@ -115,7 +116,7 @@ const useInputSelectAutocompleteVirtualScroller = (
   return { settings, getData, getRow }
 }
 
-export const InputSelectAutocomplete: FunctionComponent<TProps> = ({
+export const InputSelectAutocomplete = forwardRef<HTMLInputElement, TProps>(({
   value = '',
   items,
   onChange = () => {
@@ -128,7 +129,6 @@ export const InputSelectAutocomplete: FunctionComponent<TProps> = ({
   onKeyDown,
   onFocus,
   onActionClicked,
-  forwardRef,
   onLocalChange,
   disableFiltering = false,
   onDropStateChange,
@@ -147,7 +147,7 @@ export const InputSelectAutocomplete: FunctionComponent<TProps> = ({
   allowPlainText = false,
   suffix,
   ...inputProps
-}) => {
+}, ref) => {
   const [localValue, setLocalValue] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const [isFocus, setIsFocus] = useState(false)
@@ -156,17 +156,17 @@ export const InputSelectAutocomplete: FunctionComponent<TProps> = ({
   const dropTargetRef = useRef<HTMLDivElement | null>(null)
 
   const inputRef = useRef<HTMLInputElement | null>(
-    forwardRef && typeof forwardRef !== 'function' ? forwardRef.current : null,
+    ref && typeof ref !== 'function' ? ref.current : null,
   )
 
   const actionItems = items.filter(item => item.role === 'action')
-  const combineInputdRef = useCombinedRefs(forwardRef, inputRef)
+  const combineInputdRef = useCombinedRefs(ref, inputRef)
 
   React.useLayoutEffect(() => {
-    if (typeof forwardRef === 'function' && inputRef.current) {
-      forwardRef(inputRef.current)
+    if (typeof ref === 'function' && inputRef.current) {
+      ref(inputRef.current)
     }
-  }, [inputRef, forwardRef])
+  }, [inputRef, ref])
 
   const allItems = useMemo(
     () => (emptyItem ? [{ value: '', label: '' }, ...items] : items),
@@ -368,7 +368,7 @@ export const InputSelectAutocomplete: FunctionComponent<TProps> = ({
           onKeyDown={handleArrowNavigation}
           css={ContainerCss(isOpen)}
           variant={variant}
-          forwardRef={combineInputdRef}
+          ref={combineInputdRef}
           iconClicked={handleIconClicked}
           onClick={handleClick}
           suffix={!filteredItems.length && allowPlainText ? null : suffix}
@@ -417,6 +417,6 @@ export const InputSelectAutocomplete: FunctionComponent<TProps> = ({
       )}
     </>
   )
-}
+})
 
 export type TInputSelectAutocomplete = TProps

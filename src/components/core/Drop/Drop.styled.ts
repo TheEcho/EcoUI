@@ -86,7 +86,7 @@ export const StyledDropModalContainer = styled(Box)<StyledDropProps>(({ dropAlig
     overflowY: 'auto',
     boxShadow: '0px 4px 16px #5E616533',
     '& > *': {
-      '&:not(:first-child)': {
+      '&:not(:first-of-type)': {
         borderTop: '1px solid #E1E5EF',
       },
     },

@@ -95,7 +95,7 @@ export const InputDate: FunctionComponent<TProps> = ({
         placeholder={isFocus ? 'jj/mm/aaaa' : placeholder}
         {...(!flex && { maxWidth: 8.7 })}
         resetBtnClicked={() => handleChange(DEFAULT_VALUE)}
-        forwardRef={inputRef}
+        ref={inputRef}
         ellipsis
         {...props}
       />

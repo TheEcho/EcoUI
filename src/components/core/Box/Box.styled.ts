@@ -171,7 +171,7 @@ export const gapStyle = (props: StyleBoxPropsWithTheme): SerializedStyles => {
   return css`
     & > * {
       margin: 0 ${horizontalGap} ${verticalGap} 0;
-      :last-child {
+      :last-of-type {
         margin: 0;
       }
     }

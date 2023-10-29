@@ -131,7 +131,7 @@ export function InputSearchDropdownSelected<T>(
           <StyledDropdownSelectedContainer withButton={!!buttonLabel}>
             <Input
               autoFocus
-              forwardRef={forwardRef}
+              ref={forwardRef}
               prefix={SearchIcon}
               placeholder={props.searchPlaceholder}
               inputSize="default"

@@ -24,7 +24,7 @@ const hideCardStyle = (props: StyledObjectListWithTheme): SerializedStyles => cs
 
 const calculateMargin = (props: StyledObjectListWithTheme) => css`
   & > * {
-    :last-child {
+    :last-of-type {
       margin-bottom: ${props.displayLoadMore && props.theme.spacing.margin.medium};
       margin-top: ${props.displayLoadMore && 0};
     }
@@ -37,13 +37,13 @@ export const StyledObjectList = styled(Card)<TStyledObjectList>`
       props.hideCardStyle
         ? `none`
         : `${props.theme.color['border-light']} ${props.theme.border.size.xsmall} solid`};
-    :first-child {
+    :first-of-type {
       ${props =>
         props.displayPrefixElement || props.displayPrefixElements
           ? `border-bottom: ${props.theme.color['border']} ${props.theme.border.size.xsmall} solid;`
           : ''}
       & > * {
-        :not(:last-child) {
+        :not(:last-of-type) {
           ${props =>
             props.displayPrefixElements
               ? `border-bottom: ${props.theme.color['border-light']} ${props.theme.border.size.xsmall} solid;`
@@ -54,7 +54,7 @@ export const StyledObjectList = styled(Card)<TStyledObjectList>`
     :nth-last-child(2) {
       border-bottom: ${props => props.displayLoadMore && 'none'};
     }
-    :last-child {
+    :last-of-type {
       border-bottom: none;
     }
   }

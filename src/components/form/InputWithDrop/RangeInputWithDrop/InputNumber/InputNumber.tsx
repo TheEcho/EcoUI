@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback, useEffect, useState } from 'react'
+import { forwardRef, useCallback, useEffect, useState } from 'react'
 
 import { Input } from '../../../..'
 import { InputProps } from '../../../Input/Input'
@@ -8,12 +8,11 @@ type TProps = {
   onChange: (number: number | null) => void
 } & Omit<InputProps, 'value' | 'onChange' | 'error'>
 
-export const InputNumber: FunctionComponent<TProps> = ({
+export const InputNumber = forwardRef<HTMLInputElement, TProps>(({
   value,
   onChange,
-  forwardRef,
   ...props
-}) => {
+}, ref) => {
   const [strValue, setStrValue] = useState<string>(value + '')
 
   // When props.value changes, update the displayed value.
@@ -48,12 +47,12 @@ export const InputNumber: FunctionComponent<TProps> = ({
     <Input
       value={strValue}
       type="number"
-      forwardRef={forwardRef}
+      ref={ref}
       onChange={onInputChange}
       resetBtnClicked={onResetInput}
       {...props}
     />
   )
-}
+})
 
 export type TInputNumberProps = TProps

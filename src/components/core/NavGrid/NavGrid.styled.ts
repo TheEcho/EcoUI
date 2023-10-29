@@ -41,7 +41,7 @@ export const StyledNavGrid = styled(Card)<StyledNavGridProps>`
       border-right: ${(props) =>
         `${props.theme.color['border-light']} ${props.theme.border.size.xsmall} solid`};
     }
-    :last-child {
+    :last-of-type {
       border-bottom: none;
     }
     :nth-child(odd):nth-last-child(2) {

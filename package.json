@@ -1,6 +1,6 @@
 {
   "name": "@theecho/ecoui",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Eco UI Design System",
   "license": "MIT",
   "author": "Echo",
@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
-    "build": "rollup -c --bundleConfigAsCjs"
+    "build": "rm -rf dist && rollup -c --bundleConfigAsCjs"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -67,9 +67,9 @@
     "@rollup/plugin-node-resolve": "15.2.1",
     "@rollup/plugin-terser": "0.4.4",
     "@rollup/plugin-typescript": "11.1.4",
-    "@types/react": "18.2.25",
+    "@types/react": "18.2.22",
     "@types/react-datepicker": "4.15.1",
-    "@types/react-dom": "18.2.8",
+    "@types/react-dom": "18.2.14",
     "@types/uuid": "9.0.6",
     "@typescript-eslint/eslint-plugin": "6.7.3",
     "@typescript-eslint/parser": "6.7.3",

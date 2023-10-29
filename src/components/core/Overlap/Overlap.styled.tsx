@@ -18,7 +18,7 @@ const overlapStyle = ({
   align-items: center;
   flex-direction: ${direction === 'horizontal' ? 'row' : 'column'};
   & > * {
-    &:not(:first-child) {
+    &:not(:first-of-type) {
       ${direction === 'horizontal' && `margin-left: -${overlapMargin}rem`};
       ${direction === 'vertical' && `margin-top: -${overlapMargin}rem`};
     }

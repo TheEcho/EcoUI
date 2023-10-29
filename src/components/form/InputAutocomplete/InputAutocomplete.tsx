@@ -1,6 +1,7 @@
 import React, {
   FunctionComponent,
   ReactNode,
+  forwardRef,
   useCallback,
   useEffect,
   useMemo,
@@ -87,7 +88,7 @@ export const useInputAutocompleteVirtualScroller = (
   return { settings, getData, getRow }
 }
 
-export const InputAutocomplete: FunctionComponent<TProps> = ({
+export const InputAutocomplete = forwardRef<HTMLInputElement, TProps>(({
   value = '',
   onChange = () => {
     // noop
@@ -97,10 +98,9 @@ export const InputAutocomplete: FunctionComponent<TProps> = ({
   onKeyDown,
   onFocus,
   onActionClicked,
-  forwardRef,
   shouldFilterItems = true,
   ...inputProps
-}) => {
+}, ref) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isFocus, setIsFocus] = useState(false)
   const [selectedItemIndex, setSelectedItemIndex] = useState(-1) // -1 so that by default nothing is selected (enabling user to enter free text and hit enter without selecting something even if it matched).
@@ -108,7 +108,7 @@ export const InputAutocomplete: FunctionComponent<TProps> = ({
   const dropTargetRef = useRef<HTMLDivElement | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
 
-  const ref = (forwardRef || inputRef) as React.MutableRefObject<HTMLInputElement | null>
+  const forwardedRef = (ref || inputRef) as React.MutableRefObject<HTMLInputElement | null>
 
   const openDrop = useCallback(() => setIsOpen(true), [])
   const closeDrop = useCallback(() => setIsOpen(false), [])
@@ -127,12 +127,12 @@ export const InputAutocomplete: FunctionComponent<TProps> = ({
 
   const handleIconClicked = useCallback((): void => {
     if (!isOpen) {
-      if (ref.current) {
-        ref.current.focus()
+      if (forwardedRef.current) {
+        forwardedRef.current.focus()
       }
     }
     setIsOpen(!isOpen)
-  }, [isOpen, ref])
+  }, [isOpen, forwardedRef])
 
   const formattedItems: TInputAutoCompleteItemWithAction[] = useMemo(
     () =>
@@ -186,13 +186,13 @@ export const InputAutocomplete: FunctionComponent<TProps> = ({
     (item: string): void => {
       onChange(item)
 
-      if (ref.current) {
-        ref.current.focus()
+      if (forwardedRef.current) {
+        forwardedRef.current.focus()
       }
 
       closeDrop()
     },
-    [closeDrop, onChange, ref],
+    [closeDrop, onChange, forwardedRef],
   )
 
   const handleArrowNavigation = useCallback(
@@ -316,7 +316,7 @@ export const InputAutocomplete: FunctionComponent<TProps> = ({
           onKeyDown={handleArrowNavigation}
           variant={variant}
           iconClicked={handleIconClicked}
-          forwardRef={ref}
+          ref={forwardedRef}
           {...inputProps}
         />
       </Box>
@@ -340,4 +340,4 @@ export const InputAutocomplete: FunctionComponent<TProps> = ({
       )}
     </>
   )
-}
+})

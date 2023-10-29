@@ -1,21 +1,20 @@
-import { FunctionComponent, useEffect, useState } from 'react'
+import { FunctionComponent } from 'react'
 import { createPortal } from 'react-dom'
 
-import { getNewContainer, removeContainer } from '../../../utils/DOM'
 import { DropContainer, DropContainerProps } from './DropContainer'
 import { WithChildren } from '@/types/WithChildren'
 
-const useContainer = (): HTMLDivElement | null => {
-  const [container] = useState<HTMLDivElement>(getNewContainer())
-  useEffect(() => {
-    return () => {
-      if (container) {
-        removeContainer(container)
-      }
-    }
-  }, [container])
-  return container || null
-}
+// const useContainer = (): HTMLDivElement | null => {
+//   const [container] = useState<HTMLDivElement>(getNewContainer())
+//   useEffect(() => {
+//     return () => {
+//       if (container) {
+//         removeContainer(container)
+//       }
+//     }
+//   }, [container])
+//   return container || null
+// }
 
 export type DropProps = {
   targetMargin?: number
@@ -30,13 +29,7 @@ export type DropProps = {
 } & DropContainerProps
 
 export const Drop: FunctionComponent<DropProps & WithChildren> = ({ children, ...rest }) => {
-  const dropContainer = useContainer()
-
-  if (!dropContainer) {
-    return null
-  }
-
-  return createPortal(<DropContainer {...rest}>{children}</DropContainer>, dropContainer)
+  return createPortal(<DropContainer {...rest}>{children}</DropContainer>, document.body)
 }
 
 export default Drop

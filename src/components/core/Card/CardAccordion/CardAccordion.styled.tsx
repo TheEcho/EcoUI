@@ -11,7 +11,7 @@ export const StyledCardAccordion = styled(Card)(() => {
 
 export const StyledCardAccordionHeaderSuffix = styled(Box)`
   & > * {
-    &:not(:first-child) {
+    &:not(:first-of-type) {
       position: relative;
 
       &:before {
