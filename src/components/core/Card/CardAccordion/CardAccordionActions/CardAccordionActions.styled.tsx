@@ -5,7 +5,7 @@ import { ActionType } from './CardAccordionAction/CardAccordionAction'
 
 export const StyledCardAccordionActions = styled(Box)`
   & > * {
-    &:not(:last-of-type) {
+    &:not(:last-child) {
       border-right: ${(props) =>
         `${props.theme.border.size.xsmall} solid ${props.theme.color.border}`};
     }

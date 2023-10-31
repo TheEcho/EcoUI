@@ -4,12 +4,12 @@ import { Box } from '../../core/Box'
 
 export const StyledPillRadioGroup = styled(Box)`
   & > * {
-    &:first-of-type {
+    &:first-child {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
     }
 
-    &:last-of-type {
+    &:last-child {
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
     }

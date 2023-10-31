@@ -10,7 +10,7 @@ const EXAMPLE_IMAGE_URL =
   'https://images.unsplash.com/photo-1525268499284-86ec700c826d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nzd8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
 
 export default {
-  title: 'Core/Form/AvatarUpload',
+  title: 'Form/AvatarUpload',
   decorators: [withKnobs],
   component: AvatarUpload,
   tags: ['autodocs'],

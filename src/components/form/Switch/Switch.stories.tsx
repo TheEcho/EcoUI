@@ -5,7 +5,7 @@ import { Switch } from './Switch'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/Switch',
+  title: 'Form/Switch',
   component: Switch,
   tags: ['autodocs'],
 } satisfies Meta<typeof Switch>

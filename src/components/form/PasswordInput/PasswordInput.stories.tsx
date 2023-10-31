@@ -8,7 +8,7 @@ import { PasswordInput } from '.'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/Input',
+  title: 'Form/Input',
   decorators: [withKnobs],
   component: PasswordInput,
   tags: ['autodocs'],

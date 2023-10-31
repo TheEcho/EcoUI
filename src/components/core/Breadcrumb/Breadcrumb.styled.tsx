@@ -6,7 +6,7 @@ export type StyledBreadcrumbProps = BoxProps
 
 export const StyledBreadcrumbContainer = styled(Box)<StyledBreadcrumbProps>`
   & > * {
-    &:not(:last-of-type) {
+    &:not(:last-child) {
       &:after {
         content: '/';
         margin: 0 ${(props) => props.theme.spacing.margin.xsmall};

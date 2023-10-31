@@ -10,7 +10,7 @@ export const StyledCheckboxGroupDescription = styled(Heading)`
 export const StyledCheckboxGroupOptionContainer = styled(Box)`
   & > * {
     margin-bottom: 1.2rem;
-    :last-of-type {
+    :last-child {
       margin: 0;
     }
   }

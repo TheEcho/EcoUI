@@ -18,7 +18,7 @@ export const Container = styled(Box)<TGridStyleProps>(({ itemPerRow, gap, theme 
     '& > *': {
       flex: `0 0 ${itemWidth} !important`,
 
-      '&:last-of-type': {
+      '&:last-child': {
         flex: `0 0 ${itemWidth} !important`,
       },
 

@@ -43,7 +43,7 @@ export const StyledActionListContent = styled(Box)(({ theme }) => {
   return {
     flexDirection: 'row',
     '& > *': {
-      ':not(:last-of-type)': {
+      ':not(:last-child)': {
         margin: `0 ${theme.spacing.gap.medium} 0 0`,
       },
     },
@@ -51,7 +51,7 @@ export const StyledActionListContent = styled(Box)(({ theme }) => {
     [`@media (${theme.layout.media.small})`]: {
       flexDirection: 'column',
       '& > *': {
-        ':not(:last-of-type)': {
+        ':not(:last-child)': {
           margin: `0 0 ${theme.spacing.gap.small} 0`,
         },
       },

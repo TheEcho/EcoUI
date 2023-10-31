@@ -22,7 +22,6 @@ export type FormGroupProps = {
    */
   subtitle?: string
   /**
-   * @deprecated Use 'sideTitle="Optionnel"'
    * Optional indicator
    */
   optional?: boolean

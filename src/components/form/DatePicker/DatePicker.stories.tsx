@@ -8,7 +8,7 @@ import { DatePicker } from './DatePicker'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/DatePicker',
+  title: 'Form/DatePicker',
   decorators: [withKnobs],
   component: DatePicker,
   tags: ['autodocs'],

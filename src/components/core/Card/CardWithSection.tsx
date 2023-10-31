@@ -8,12 +8,12 @@ import { CardHeader } from './CardHeader'
 export type CardSectionProps = Omit<CardProps, 'title'>
 
 const StyledCardWithSection = styled(Card)<{ hasHeader?: boolean }>(({ theme, hasHeader }) => {
-  const removeBorderRadiusSelector = hasHeader ? '&:last-of-type' : '&:not(:first-of-type):last-of-type'
+  const removeBorderRadiusSelector = hasHeader ? '&:last-child' : '&:not(:first-child):last-child'
 
   return {
     padding: 0,
     '& > *': {
-      ':not(:last-of-type)': {
+      ':not(:last-child)': {
         borderTop: 'none',
         borderBottom: `solid ${theme.border.size.xsmall} ${theme.color['border-light']}`,
         borderBottomLeftRadius: theme.border.radius.none,

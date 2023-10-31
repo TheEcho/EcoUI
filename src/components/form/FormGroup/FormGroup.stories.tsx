@@ -7,7 +7,7 @@ import { FormGroup } from './FormGroup'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/FormGroup',
+  title: 'Form/FormGroup',
   decorators: [withKnobs],
   component: FormGroup,
   tags: ['autodocs'],

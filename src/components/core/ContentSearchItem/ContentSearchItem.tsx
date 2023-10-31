@@ -3,9 +3,10 @@ import { FC, ReactNode } from 'react'
 import { Box } from '../../core/Box'
 import { Text } from '../../core/Text'
 import { ContentSearchItemContainer } from './ContentSearchItem.styled'
+import Icon, { IconProps } from '../Icon'
 
 export interface ContentSearchItemProps {
-  icon?: ReactNode
+  icon?: IconProps['icon']
 
   title: string
   subtitle?: string
@@ -28,8 +29,8 @@ export const ContentSearchItem: FC<ContentSearchItemProps> = props => {
       align="center"
       selected={!!isSelected}
     >
-      {icon}
-      <Box direction="column" gap="none" flex={1}>
+      {!!icon && (<Icon icon={icon} />)}
+      <Box direction="column" gap="none" flex>
         <Text size="regular" color="text" notSelectable>
           {title}
         </Text>

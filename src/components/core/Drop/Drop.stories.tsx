@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useRef, useState } from 'react'
 
 import { Input } from '../../form/Input'
-import { ActionList, ActionListItem } from '..'
+import { ActionList, ActionListItem, DropItem } from '..'
 import { Box } from '../Box'
 import { CardSection } from '../Card'
 import { Text } from '../Text'
@@ -33,8 +33,8 @@ export const DropClassic: FunctionComponent = () => {
       {ref.current && isDropOpen && (
         <Drop dropTarget={ref.current} onClickOutside={() => setIsDropOpen(false)}>
           <Box direction="column" padding="small">
-            <Text>Drop 1</Text>
-            <Text>Drop 1</Text>
+            <DropItem>Drop 1</DropItem>
+            <DropItem>Drop 1</DropItem>
           </Box>
         </Drop>
       )}
@@ -47,7 +47,7 @@ export const DropScrollable: FunctionComponent = () => {
   const ref = useRef<HTMLDivElement>(null)
 
   const NUMBER_OF_ITEMS = 100
-  const items = [...Array(NUMBER_OF_ITEMS)].map((_, idx) => <Text key={idx}>Drop {idx}</Text>)
+  const items = [...Array(NUMBER_OF_ITEMS)].map((_, idx) => <DropItem key={idx}>Drop {idx}</DropItem>)
 
   return (
     <Box flex={false}>
@@ -121,12 +121,12 @@ export const DropWithSection: FunctionComponent = () => {
       {ref.current && isDropOpen && (
         <Drop dropTarget={ref.current} onClickOutside={() => setIsDropOpen(false)}>
           <CardSection direction="column" padding="small">
-            <Text>Drop 1</Text>
-            <Text>Drop 2</Text>
+            <DropItem>Drop 1</DropItem>
+            <DropItem>Drop 2</DropItem>
           </CardSection>
           <CardSection direction="column" padding="small">
-            <Text>Drop 3</Text>
-            <Text>Drop 4</Text>
+            <DropItem>Drop 3</DropItem>
+            <DropItem>Drop 4</DropItem>
           </CardSection>
         </Drop>
       )}

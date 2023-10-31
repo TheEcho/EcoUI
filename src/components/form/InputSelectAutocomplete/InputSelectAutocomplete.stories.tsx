@@ -6,7 +6,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/InputSelectAutocomplete',
+  title: 'Form/InputSelectAutocomplete',
   component: InputSelectAutocomplete,
   tags: ['autodocs'],
 } satisfies Meta<typeof InputSelectAutocomplete>

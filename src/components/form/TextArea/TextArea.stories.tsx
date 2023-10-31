@@ -7,7 +7,7 @@ import { TextArea } from './TextArea'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/TextArea',
+  title: 'Form/TextArea',
   decorators: [withKnobs],
   component: TextArea,
   tags: ['autodocs'],

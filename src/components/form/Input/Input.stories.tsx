@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useState } from 'react'
 
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box } from '../../core/Box'
@@ -9,7 +10,7 @@ import { Input } from './Input'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/Input',
+  title: 'Form/Input',
   decorators: [withKnobs],
   component: Input,
   tags: ['autodocs'],
@@ -33,7 +34,7 @@ export const Default: FunctionComponent = () => (
       <Heading variant="card-header-title">With Prefix</Heading>
       <Input
         placeholder="Ex. plante, sculpture..."
-        prefix={<Icon icon="icon-search" color="text-light" />}
+        prefix={<Icon icon={<MagnifyingGlassIcon />} />}
       />
     </Box>
     <Box direction="column" gap="medium">
@@ -41,7 +42,7 @@ export const Default: FunctionComponent = () => (
       <Input
         rounded
         placeholder="Ex. plante, sculpture..."
-        prefix={<Icon icon="icon-search" color="text-light" />}
+        prefix={<Icon icon={<MagnifyingGlassIcon />} />}
       />
     </Box>
     <Box direction="column" gap="medium">
@@ -49,7 +50,7 @@ export const Default: FunctionComponent = () => (
       <Input
         placeholder="Ex. plante, sculpture..."
         disabled
-        prefix={<Icon icon="icon-search" color="text-light" />}
+        prefix={<Icon icon={<MagnifyingGlassIcon />} />}
       />
     </Box>
   </Box>
@@ -62,7 +63,7 @@ export const NoBorder: FunctionComponent = () => {
         <Heading variant="card-header-title">Normal</Heading>
         <Input
           placeholder="Ex. plante, sculpture..."
-          prefix={<Icon icon="icon-search" color="text-light" />}
+          prefix={<Icon icon={<MagnifyingGlassIcon />} />}
           variant="no-border"
         />
       </Box>
@@ -74,7 +75,7 @@ export const NoBorder: FunctionComponent = () => {
           placeholder="Ex. plante, sculpture..."
           variant="no-border"
           textColor="text-lighter"
-          prefix={<Icon icon="icon-search" color="text-lighter" />}
+          prefix={<Icon icon={<MagnifyingGlassIcon />} color="text-lighter" />}
         />
       </Box>
       <Box padding="medium" direction="column" gap="medium">
@@ -92,7 +93,7 @@ export const NoBorder: FunctionComponent = () => {
         <Input
           placeholder="Ex. plante, sculpture..."
           disabled
-          prefix={<Icon icon="icon-search" color="text-light" />}
+          prefix={<Icon icon={<MagnifyingGlassIcon />} />}
           variant="no-border"
         />
       </Box>
@@ -105,7 +106,7 @@ export const NoBorder: FunctionComponent = () => {
           variant="no-border"
           textColor="text-lighter"
           disabled
-          prefix={<Icon icon="icon-search" color="text-lighter" />}
+          prefix={<Icon icon={<MagnifyingGlassIcon />} color="text-lighter" />}
         />
       </Box>
     </Box>
@@ -119,7 +120,7 @@ export const SearchVariant: FunctionComponent = () => (
       <Input
         variant="search"
         placeholder="Ex. plante, sculpture..."
-        prefix={<Icon icon="icon-search" color="text-light" />}
+        prefix={<Icon icon={<MagnifyingGlassIcon />} />}
       />
     </Box>
   </Box>

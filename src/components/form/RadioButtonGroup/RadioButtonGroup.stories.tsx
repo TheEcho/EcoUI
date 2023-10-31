@@ -7,7 +7,7 @@ import { RadioButton, RadioButtonProps } from '../RadioButton'
 import { RadioButtonGroup } from './RadioButtonGroup'
 import { Meta } from '@storybook/react'
 export default {
-  title: 'Core/Form/RadioGroup',
+  title: 'Form/RadioGroup',
   decorators: [withKnobs],
   component: RadioButtonGroup,
   tags: ['autodocs'],

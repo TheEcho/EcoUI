@@ -11,12 +11,12 @@ export type TActionListSectionProps = {
 type StyledActionListSectionWithTheme = { theme: ITheme } & TActionListSectionProps
 
 const borderStyle = (props: StyledActionListSectionWithTheme): SerializedStyles => css`
-  &:not(:last-of-type) {
+  &:not(:last-child) {
     border-bottom: ${props.theme.border.size.xsmall} solid ${props.theme.color.border};
   }
 
   & > * {
-    :first-of-type {
+    :first-child {
       border-right: none;
       border-left: none;
       border-top: ${props.sectionIndex === 0 ? 'none' : ''};

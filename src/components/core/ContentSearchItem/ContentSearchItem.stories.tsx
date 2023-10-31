@@ -11,7 +11,7 @@ import { Meta } from '@storybook/react'
 import Icon from '../Icon'
 
 export default {
-  title: 'Core/Form/ContentSearchItem',
+  title: 'Core/ContentSearchItem',
   component: ContentSearchItem,
   tags: ['autodocs'],
 } satisfies Meta<typeof ContentSearchItem>
@@ -57,7 +57,7 @@ export const ItemWithSubtitleAndDescriptionAndIcon: FC = () => {
       <ContentSearchItem
         icon={
           <CircleIcon
-            icon={<Icon icon={HomeModernIcon} />}
+            icon={<Icon icon={<HomeModernIcon />} />}
             size="large"
             color="icon-blue"
             iconColor="background"
@@ -77,7 +77,7 @@ export const ItemWithSubtitleAndDescriptionAndIconAndBadge: FC = () => {
       <ContentSearchItem
         icon={
           <CircleIcon
-            icon={<Icon icon={HomeModernIcon} />}
+            icon={<Icon icon={<HomeModernIcon />} />}
             size="large"
             color="icon-blue"
             iconColor="background"

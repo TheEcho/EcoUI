@@ -7,7 +7,7 @@ import { Select } from './Select'
 import { SelectOption } from './SelectOption'
 import { Meta } from '@storybook/react'
 export default {
-  title: 'Core/Form/Select',
+  title: 'Form/Select',
   decorators: [withKnobs],
   component: Select,
   tags: ['autodocs'],

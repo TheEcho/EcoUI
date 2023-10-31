@@ -15,7 +15,7 @@ import { Icon } from '../../core'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/InputSearchDropdown',
+  title: 'Form/InputSearchDropdown',
   component: InputSearchDropdown,
   tags: ['autodocs'],
 } satisfies Meta<typeof InputSearchDropdown>

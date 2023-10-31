@@ -8,7 +8,7 @@ import dayjs from 'dayjs'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/InputWithDrop',
+  title: 'Form/InputWithDrop',
   component: InputWithDrop,
   decorators: [
     (component: () => ReactNode): ReactElement => <Box margin="large">{component()}</Box>,

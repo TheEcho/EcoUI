@@ -8,7 +8,7 @@ import { BuildingLibraryIcon, BuildingOfficeIcon, HomeIcon } from '@heroicons/re
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/PillRadioGroup',
+  title: 'Form/PillRadioGroup',
   decorators: [withKnobs],
   component: PillRadioGroup,
   tags: ['autodocs'],

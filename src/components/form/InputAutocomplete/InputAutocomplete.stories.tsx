@@ -6,7 +6,7 @@ import { ClockIcon } from '@heroicons/react/24/outline'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/InputAutocomplete',
+  title: 'Form/InputAutocomplete',
   component: InputAutocomplete,
   tags: ['autodocs'],
 } satisfies Meta<typeof InputAutocomplete>

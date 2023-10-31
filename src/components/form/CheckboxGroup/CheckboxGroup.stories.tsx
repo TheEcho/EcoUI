@@ -9,7 +9,7 @@ import { CheckboxGroup } from './CheckboxGroup'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/CheckboxGroup',
+  title: 'Form/CheckboxGroup',
   decorators: [withKnobs],
   component: CheckboxGroup,
   tags: ['autodocs'],

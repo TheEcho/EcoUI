@@ -14,7 +14,7 @@ export const FormError: FunctionComponent<FormErrorProps> = ({ withIcon = true, 
     <Box direction="row" align="start" gap="medium" flex={false}>
       {withIcon && (
         <StyledIconWrapper flex={false}>
-          <Icon icon={<ExclamationCircleIcon />} color="primary" />
+          <Icon icon={<ExclamationCircleIcon />} color="primary-light" />
         </StyledIconWrapper>
       )}
       <Text color="primary" {...props}>

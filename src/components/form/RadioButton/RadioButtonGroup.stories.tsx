@@ -8,7 +8,7 @@ import { RadioButton } from './RadioButton'
 import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/Radio',
+  title: 'Form/Radio',
   decorators: [withKnobs],
   component: RadioButton,
   tags: ['autodocs'],

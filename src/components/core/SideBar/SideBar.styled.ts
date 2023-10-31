@@ -9,10 +9,10 @@ export const StyledSideBar = styled(Box)<StyledSideBarProps>`
     ${(props) =>
       !props.hasSectionSeparator &&
       `
-      &:not(:last-of-type) {
+      &:not(:last-child) {
         padding-bottom: ${props.theme.spacing.padding.xlarge};
       }
-      &:first-of-type {
+      &:first-child {
         padding-top: ${props.theme.spacing.padding['medium']};
       }
       `}
@@ -20,12 +20,12 @@ export const StyledSideBar = styled(Box)<StyledSideBarProps>`
     ${(props) =>
       props.hasSectionSeparator &&
       `
-      &:not(:last-of-type) {
+      &:not(:last-child) {
         padding: ${props.theme.spacing.padding.medium} 0;
         border-bottom: ${props.theme.border.size.xsmall} solid ${props.theme.color['border-light']};
       }
 
-      &:last-of-type {
+      &:last-child {
         padding: ${props.theme.spacing.padding.medium} 0;
       }
     `}
