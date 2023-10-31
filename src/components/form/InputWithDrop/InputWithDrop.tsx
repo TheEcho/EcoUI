@@ -1,13 +1,12 @@
-import React, { forwardRef, useEffect, useRef } from 'react'
+import React, { PropsWithChildren, forwardRef, useEffect, useRef } from 'react'
 import { useCallback } from 'react'
 
 import { Drop } from '../../core'
 import Input, { InputProps } from '../Input/Input'
 import { TextAreaProps } from '../TextArea'
 import { StyledContainer } from './InputWithDrop.styled'
-import { WithChildren } from '@/types/WithChildren'
 
-type TProps = {
+export type InputWithDropProps = PropsWithChildren<{
   name?: string
   dropState?: boolean
   updateDropState: (isOpen: boolean) => void
@@ -18,9 +17,9 @@ type TProps = {
   onChange?: (str: string) => void
   resetBtnClicked?: (e?: React.MouseEvent<HTMLDivElement>) => void
   onKeyDown?: InputProps['onKeyDown']
-} & Omit<TextAreaProps, 'name' | 'onChange'>
+}> & Omit<TextAreaProps, 'name' | 'onChange'>
 
-export const InputWithDrop = forwardRef<HTMLInputElement, TProps & WithChildren>(({
+export const InputWithDrop = forwardRef<HTMLInputElement, InputWithDropProps>(({
   name = '',
   value,
   dropState = false,
@@ -89,5 +88,3 @@ export const InputWithDrop = forwardRef<HTMLInputElement, TProps & WithChildren>
     </>
   )
 })
-
-export type InputWithDropProps = TProps

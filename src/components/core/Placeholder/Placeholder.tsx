@@ -1,13 +1,12 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { StyledContainer, StyledPlaceholderProps } from './Placeholder.styled'
-import { WithChildren } from '@/types/WithChildren'
 
-export type PlaceholderProps = {
+export type PlaceholderProps = PropsWithChildren<{
   loading?: boolean
-} & StyledPlaceholderProps
+}> & StyledPlaceholderProps
 
-export const Placeholder: FunctionComponent<PlaceholderProps & WithChildren> = ({
+export const Placeholder: FunctionComponent<PlaceholderProps> = ({
   loading,
   children,
   ...props

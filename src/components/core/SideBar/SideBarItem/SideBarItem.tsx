@@ -1,13 +1,12 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
 
 import { Box, Text } from '../../../core'
 import { BoxProps } from '../../Box'
 import { IconProps } from '../../Icon'
 import { TextProps } from '../../Text'
 import { StyledSideBarItem } from './SideBarItem.styled'
-import { WithChildren } from '@/types/WithChildren'
 
-export type SideBarItemProps = {
+export type SideBarItemProps = PropsWithChildren<{
   /**
    Title to display
    */
@@ -44,9 +43,9 @@ export type SideBarItemProps = {
    * Size passed to the underlying Text component
    */
   size?: TextProps['size']
-}
+}>
 
-export const SideBarItem: FunctionComponent<SideBarItemProps & WithChildren> = ({
+export const SideBarItem: FunctionComponent<SideBarItemProps> = ({
   children,
   title = '',
   icon,

@@ -1,14 +1,13 @@
 import { ThemeProvider } from '@emotion/react'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { ITheme, theme as defaultTheme } from '@/index'
-import { WithChildren } from '@/types/WithChildren'
 
-type Props = {
+export type ThemeProps = PropsWithChildren<{
   theme?: ITheme
-}
+}>
 
-export const Theme: FunctionComponent<Props & WithChildren> = ({ children, theme = defaultTheme }) => {
+export const Theme: FunctionComponent<ThemeProps> = ({ children, theme = defaultTheme }) => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
 

@@ -1,7 +1,6 @@
-import { ElementType, FunctionComponent } from 'react'
+import { ElementType, FunctionComponent, PropsWithChildren } from 'react'
 
 import { StyledText, StyledTextProps } from './Text.styled'
-import { WithChildren } from '@/types/WithChildren'
 
 export type TextProps = {
   /**
@@ -36,9 +35,9 @@ export type TextProps = {
   title?: string
   notSelectable?: boolean
   className?: string
-} & WithChildren
+}
 
-export const Text: FunctionComponent<TextProps> = ({ size, color, ...rest }) => {
+export const Text: FunctionComponent<PropsWithChildren<TextProps>> = ({ size, color, ...rest }) => {
   return <StyledText size={size} color={color} {...rest} />
 }
 

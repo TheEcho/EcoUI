@@ -1,13 +1,13 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 import { ExclamationCircleIcon } from '@heroicons/react/24/outline'
 
 import { Box, Icon, Text } from '../../core'
 import { TextProps } from '../../core/Text'
 import { StyledIconWrapper } from './FormGroup.styled'
 
-type FormErrorProps = {
+type FormErrorProps = PropsWithChildren<{
   withIcon?: boolean
-} & TextProps
+}> & TextProps
 
 export const FormError: FunctionComponent<FormErrorProps> = ({ withIcon = true, children, ...props }) => {
   return (

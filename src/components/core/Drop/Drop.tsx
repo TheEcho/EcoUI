@@ -1,8 +1,7 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, PropsWithChildren } from 'react'
 import { createPortal } from 'react-dom'
 
 import { DropContainer, DropContainerProps } from './DropContainer'
-import { WithChildren } from '@/types/WithChildren'
 
 // const useContainer = (): HTMLDivElement | null => {
 //   const [container] = useState<HTMLDivElement>(getNewContainer())
@@ -16,7 +15,7 @@ import { WithChildren } from '@/types/WithChildren'
 //   return container || null
 // }
 
-export type DropProps = {
+export type DropProps = PropsWithChildren<{
   targetMargin?: number
   hideCardStyle?: boolean
   preventDefaultMediaQuery?: boolean
@@ -26,9 +25,9 @@ export type DropProps = {
   maxDropWidth?: number
   noMobileFormat?: boolean
   titleMobile?: string
-} & DropContainerProps
+}> & DropContainerProps
 
-export const Drop: FunctionComponent<DropProps & WithChildren> = ({ children, ...rest }) => {
+export const Drop: FunctionComponent<DropProps> = ({ children, ...rest }) => {
   return createPortal(<DropContainer {...rest}>{children}</DropContainer>, document.body)
 }
 

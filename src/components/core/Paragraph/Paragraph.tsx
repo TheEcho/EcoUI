@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { StyledParagraph, TStyledParagraphProps } from './Paragraph.styled'
 
-export type ParagraphProps = React.PropsWithChildren<{
+export type ParagraphProps = PropsWithChildren<{
   /**
   * @description Token : fontSize / lineHeight
    - **xsmall** : 1rem / 1.2rem

@@ -1,5 +1,6 @@
 import React, {
   FunctionComponent,
+  PropsWithChildren,
   ReactElement,
   ReactNode,
   useEffect,
@@ -13,7 +14,6 @@ import { StyledDropProps } from '../Drop/Drop.styled'
 import { TSVGSizeEnum } from './../../../shared/tokens'
 import { StyledDropActionsIconContainer } from './DropActions.styled'
 import { DropActionsItem } from './DropActionsItem/DropActionsItem'
-import { WithChildren } from '@/types/WithChildren'
 
 export type TDropActionType = 'delete' | 'separator'
 export type TDropAction = {
@@ -27,7 +27,7 @@ export type TDropAction = {
 
 export type TDropActionDropComponent = { closePanel?: () => void }
 
-export type DropActionsProps = {
+export type DropActionsProps = PropsWithChildren<{
   icon?: IconProps['icon']
   /**
    * actions array of form { title: string; type?: TDropActionType; onClick: () => void }
@@ -92,9 +92,9 @@ export type DropActionsProps = {
    * Stop event propagation after action click
    */
   stopPropagation?: boolean
-}
+}>
 
-export const DropActions: FunctionComponent<DropActionsProps & WithChildren> = ({
+export const DropActions: FunctionComponent<DropActionsProps> = ({
   actions,
   children,
   buttonContent,

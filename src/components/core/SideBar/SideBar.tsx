@@ -1,11 +1,10 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
 
 import { Box } from '../../core'
 import { TStyledBoxProps } from '../Box/Box.styled'
 import { StyledSideBar } from './SideBar.styled'
-import { WithChildren } from '@/types/WithChildren'
 
-export type SideBarProps = {
+export type SideBarProps = PropsWithChildren<{
   /**
    * Flex direction of the box
    */
@@ -74,9 +73,9 @@ export type SideBarProps = {
   height?: TStyledBoxProps['height']
   // displays a line Separator between each section
   hasSectionSeparator?: boolean
-}
+}>
 
-export const SideBar: FunctionComponent<SideBarProps & WithChildren> = ({
+export const SideBar: FunctionComponent<SideBarProps> = ({
   background = 'background',
   children,
   hasSectionSeparator = false,

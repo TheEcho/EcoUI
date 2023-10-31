@@ -5,10 +5,10 @@ import { TColor } from '../../../shared/tokens/color'
 import { TTextWeight } from '../../../shared/tokens/text'
 import { Text } from '../Text'
 import { StyledActionListContent, StyledActionListItem } from './ActionListItem.styled'
-import { WithChildren } from '@/types/WithChildren'
 import Icon, { IconProps } from '../Icon'
 import Box from '../Box'
 import { Tag } from '../Tag'
+import { PropsWithChildren } from 'react'
 
 type ActionListItemTitleProps = {
   color: TColor
@@ -52,7 +52,7 @@ const getDescriptionElement = ({ description }: ActionListItemDescriptionProps):
   return description
 }
 
-export type ActionListItemProps = {
+export type ActionListItemProps = PropsWithChildren<{
   title?: string | JSX.Element
   description?: string | JSX.Element
   selected?: boolean
@@ -62,7 +62,7 @@ export type ActionListItemProps = {
   color?: TColor
   weight?: TTextWeight
   hasChildren?: boolean
-} & WithChildren
+}>
 
 export const ActionListItem = ({
   children,

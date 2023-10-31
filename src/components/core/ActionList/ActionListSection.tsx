@@ -1,22 +1,21 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, PropsWithChildren } from 'react'
 import { isMobile } from 'react-device-detect'
 
 import { renderActionListItems } from './ActionList'
 import { ActionListItemProps } from './ActionListItem'
 import { StyledActionListSection } from './ActionListSection.styled'
-import { WithChildren } from '@/types/WithChildren'
 import Box from '../Box'
 import Icon, { IconProps } from '../Icon'
 import { Heading } from '../Heading'
 
-export type ActionListSectionProps = {
+export type ActionListSectionProps = PropsWithChildren<{
   title?: string
   icon?: IconProps['icon']
   label?: string
   sectionIndex?: number
   actionListItems?: ActionListItemProps[]
   onClick?: () => void
-} & WithChildren
+}>
 export const ActionListSection: FunctionComponent<ActionListSectionProps> = ({
   children,
   icon,

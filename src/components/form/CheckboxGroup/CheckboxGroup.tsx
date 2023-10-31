@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, useState } from 'react'
+import React, { ChangeEvent, FunctionComponent, PropsWithChildren, useState } from 'react'
 
 import { Box } from '../../core'
 import { TStyledBoxProps } from '../../core/Box/Box.styled'
@@ -9,9 +9,8 @@ import {
   StyledCheckboxGroupDescription,
   StyledCheckboxGroupOptionContainer,
 } from './CheckboxGroup.styled'
-import { WithChildren } from '@/types/WithChildren'
 
-export type CheckboxGroupProps = {
+export type CheckboxGroupProps = PropsWithChildren<{
   /**
    * Name of the group
    */
@@ -37,9 +36,9 @@ export type CheckboxGroupProps = {
    * Error to show for this field
    */
   error?: string | boolean
-}
+}>
 
-export const CheckboxGroup: FunctionComponent<CheckboxGroupProps & WithChildren> = ({
+export const CheckboxGroup: FunctionComponent<CheckboxGroupProps> = ({
   defaultValue,
   name,
   options,

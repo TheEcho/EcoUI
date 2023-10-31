@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { matchComponentName } from '../../../../../utils/matchComponentName'
 import { Text } from '../../../Text'
@@ -8,18 +8,17 @@ import {
   StyledCardAccordionActions,
 } from './CardAccordionActions.styled'
 import { getActionColor } from './CardAccordionActions.utils'
-import { WithChildren } from '@/types/WithChildren'
 
 export type Action = {
   label: string
   type: ActionType
 }
 
-type CardAccordionActionsProps = {
+type CardAccordionActionsProps = PropsWithChildren<{
   actions?: Action[]
   onClick?: (action: Action) => void
   componentName?: string
-} & WithChildren
+}>
 
 export const CardAccordionActions: FunctionComponent<CardAccordionActionsProps> = ({
   actions,

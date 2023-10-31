@@ -1,10 +1,9 @@
-import React, { ElementType } from 'react'
+import React, { ElementType, PropsWithChildren } from 'react'
 
 import { StyledLink, StyledLinkProps } from './Link.styled'
-import { WithChildren } from '@/types/WithChildren'
 import { IconProps } from '../Icon'
 
-export type LinkProps = {
+export type LinkProps = PropsWithChildren<{
   href?: string
   as?: ElementType<any>
   label?: string
@@ -13,7 +12,7 @@ export type LinkProps = {
   icon?: IconProps['icon']
   resetCss?: boolean
   onClick?: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void
-} & StyledLinkProps
+}> & StyledLinkProps
 
 /**
  * Link extends Text component
@@ -31,11 +30,11 @@ export const Link = React.forwardRef(
       icon,
       resetCss = false,
       ...rest
-    }: LinkProps & WithChildren,
+    }: LinkProps,
     ref,
   ) => {
     const content = label || children || ''
-    const linkProps: Pick<LinkProps & WithChildren, 'as' | 'href' | 'color' | 'target' | 'title' | 'children'> = {
+    const linkProps: Pick<LinkProps, 'as' | 'href' | 'color' | 'target' | 'title' | 'children'> = {
       as: 'a',
       href,
       children,

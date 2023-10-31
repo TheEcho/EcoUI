@@ -5,13 +5,13 @@ import { ITheme } from '@/index'
 
 import { decorationStyle } from '../../../utils'
 import { Text, TextProps } from '../Text'
-import { WithChildren } from '@/types/WithChildren'
+import { PropsWithChildren } from 'react'
 
 export type StyledLinkPropsWithTheme = { theme: ITheme } & StyledLinkProps
 
-export type StyledLinkProps = {
+export type StyledLinkProps = PropsWithChildren<{
   resetCss?: boolean
-} & TextProps & WithChildren
+}> & TextProps
 
 export const StyledLinkResetCss = (props: StyledLinkProps): SerializedStyles => css`
   line-height: 0;

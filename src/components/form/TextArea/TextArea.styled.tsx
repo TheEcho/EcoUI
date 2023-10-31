@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { css, SerializedStyles } from '@emotion/react'
 import styled from '@emotion/styled'
@@ -7,9 +7,8 @@ import { TTextSize, TTextWeight } from '../../../shared/tokens/text'
 import { defaultTextStyle } from '../../../utils/textStyles'
 import { Box } from '../../core'
 import { TColor } from '@/index'
-import { WithChildren } from '@/types/WithChildren'
 
-type StyledTextAreaProps = {
+type StyledTextAreaProps = PropsWithChildren<{
   error?: string | boolean
   active?: boolean
   resizable?: boolean
@@ -20,12 +19,12 @@ type StyledTextAreaProps = {
   height?: number
   disabled?: boolean
   color?: TColor
-}
+}>
 
-type StyledTextAreaContainerProps = {
+type StyledTextAreaContainerProps = PropsWithChildren<{
   textAreaSize: 'small' | 'default'
   hasChildren?: boolean
-}
+}>
 
 type BaseTextAreaContainerProps = StyledTextAreaProps & StyledTextAreaContainerProps
 
@@ -64,7 +63,7 @@ export const placeholderSizes: {
   },
 }
 
-export const TextAreaContainer = styled(BaseTextAreaContainer)<BaseTextAreaContainerProps & WithChildren>`
+export const TextAreaContainer = styled(BaseTextAreaContainer)<BaseTextAreaContainerProps>`
   width: 100%;
   padding: ${(props) =>
     `${placeholderSizes[props.textAreaSize].paddingVertical}rem ${

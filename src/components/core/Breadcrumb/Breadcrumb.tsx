@@ -1,20 +1,19 @@
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
 
 import { Box, Link, Text } from '@/index'
 
 import { TColor } from '../../../shared/tokens/color'
 import { StyledBreadcrumbContainer } from './Breadcrumb.styled'
-import { WithChildren } from '@/types/WithChildren'
 
 export type BreadcrumbLink = {
   title: string
   href?: string
 }
 
-type BreadcrumbProps = {
+type BreadcrumbProps = PropsWithChildren<{
   back?: ReactNode | (() => void)
   links?: BreadcrumbLink[]
-} & WithChildren
+}>
 
 export const Breadcrumb: FunctionComponent<BreadcrumbProps> = ({
   links,

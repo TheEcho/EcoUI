@@ -1,10 +1,9 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { svgSizes } from '../../../shared/tokens/svg'
 import { StyledIconContainer, TStyledSvgIconProps } from './Icon.styled'
-import { WithChildren } from '@/types/WithChildren'
 
-export type IconProps = {
+export type IconProps = PropsWithChildren<{
   icon?: JSX.Element
   url?: string
   /**
@@ -25,9 +24,9 @@ export type IconProps = {
   color?: TStyledSvgIconProps['color']
   rotate?: number
   spinning?: boolean
-}
+}>
 
-export const Icon: FunctionComponent<IconProps & WithChildren> = ({
+export const Icon: FunctionComponent<IconProps> = ({
   icon,
   url,
   size = 'large',

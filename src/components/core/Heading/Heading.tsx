@@ -1,4 +1,4 @@
-import { ElementType, FunctionComponent } from 'react'
+import { ElementType, PropsWithChildren } from 'react'
 
 import {
   BaseHeading,
@@ -12,7 +12,6 @@ import {
   StyledSerifTitle,
   StyledSubTitle,
 } from './Heading.styled'
-import { WithChildren } from '@/types/WithChildren'
 
 export type THeadingVariant =
   | 'page-title'
@@ -24,7 +23,7 @@ export type THeadingVariant =
   | 'serif-title'
   | 'subtitle'
 
-export type HeadingProps = {
+export type HeadingProps = PropsWithChildren<{
   /**
    * Variant of the heading
    */
@@ -46,7 +45,7 @@ export type HeadingProps = {
    */
   textAlign?: StyledHeadingProps['textAlign']
   css?: StyledHeadingProps['css']
-} & WithChildren
+}>
 
 export const StyledHeadingComponents: {
   [key in THeadingVariant]: { component: typeof BaseHeading; as: ElementType<any> }

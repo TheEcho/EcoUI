@@ -1,17 +1,16 @@
-import React, { BaseSyntheticEvent, FunctionComponent } from 'react'
+import React, { BaseSyntheticEvent, FunctionComponent, PropsWithChildren } from 'react'
 
 import { StyledForm } from './Form.styled'
-import { WithChildren } from '@/types/WithChildren'
 
-export type FormProps = {
+export type FormProps = PropsWithChildren<{
   method?: 'get' | 'post' | 'dialog'
   id?: string
   name?: string
   action?: string
   onSubmit: (e: BaseSyntheticEvent) => Promise<void>
-}
+}>
 
-export const Form: FunctionComponent<FormProps & WithChildren> = ({ children, ...rest }) => {
+export const Form: FunctionComponent<FormProps> = ({ children, ...rest }) => {
   return <StyledForm {...rest}>{children}</StyledForm>
 }
 

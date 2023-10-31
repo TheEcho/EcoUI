@@ -1,13 +1,13 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { Text } from '../../../core'
 import { StyledListItem } from './ListItem.styled'
-import { WithChildren } from '@/types/WithChildren'
 
-export type ListItemProps = {
+export type ListItemProps = PropsWithChildren<{
   text?: string
-}
-export const ListItem: FunctionComponent<ListItemProps & WithChildren> = ({ children, text, ...rest }) => {
+}>
+
+export const ListItem: FunctionComponent<ListItemProps> = ({ children, text, ...rest }) => {
   let content = null
   if (text) {
     content = <Text>{text}</Text>

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
 
 import { Box } from '../../core'
 import {
@@ -6,12 +6,11 @@ import {
   lastToolbarElementCss,
   middleToolbarElementCss,
 } from './StyledToolbar'
-import { WithChildren } from '@/types/WithChildren'
 
-type ToolbarProps = {
+type ToolbarProps = PropsWithChildren<{
   width?: number
   flex?: boolean
-}
+}>
 
 const cloneElementsWithCss = (elements: ReactNode[]): ReactNode | ReactNode[] => {
   if (elements.length === 1) {
@@ -44,7 +43,7 @@ const cloneElementsWithCss = (elements: ReactNode[]): ReactNode | ReactNode[] =>
  * - Dropdown
  * - Input
  */
-export const Toolbar: FunctionComponent<ToolbarProps & WithChildren> = ({ children, ...rest }) => {
+export const Toolbar: FunctionComponent<ToolbarProps> = ({ children, ...rest }) => {
   const childrenWithToolbarCss = cloneElementsWithCss(React.Children.toArray(children))
 
   return <Box {...rest}>{childrenWithToolbarCss}</Box>

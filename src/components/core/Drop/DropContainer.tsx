@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback, useEffect, useRef } from 'react'
+import { FunctionComponent, PropsWithChildren, useCallback, useEffect, useRef } from 'react'
 import { isMobile } from 'react-device-detect'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -15,9 +15,8 @@ import {
   StyledDropProps,
 } from './Drop.styled'
 import { placeDropContainer } from './placeDropContainer'
-import { WithChildren } from '@/types/WithChildren'
 
-export type DropContainerProps = {
+export type DropContainerProps = PropsWithChildren<{
   dropTarget: HTMLElement
   onClickOutside?: () => void
   onEsc?: () => void
@@ -38,9 +37,9 @@ export type DropContainerProps = {
   noMobileFormat?: boolean
   titleMobile?: string
   width?: number
-} & Pick<StyledDropProps, 'elevation' | 'borderRadius' | 'maxHeight'>
+}> & Pick<StyledDropProps, 'elevation' | 'borderRadius' | 'maxHeight'>
 
-export const DropContainer: FunctionComponent<DropContainerProps & WithChildren> = ({
+export const DropContainer: FunctionComponent<DropContainerProps> = ({
   dropAlign = {
     top: 'bottom',
     left: 'left',

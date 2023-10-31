@@ -1,13 +1,13 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { StyledOverlap } from './Overlap.styled'
-import { WithChildren } from '@/types/WithChildren'
 
-export type OverlapProps = {
+export type OverlapProps = PropsWithChildren<{
   direction?: 'vertical' | 'horizontal'
   overlapMargin?: number
-}
-export const Overlap: FunctionComponent<OverlapProps & WithChildren> = ({
+}>
+
+export const Overlap: FunctionComponent<OverlapProps> = ({
   direction = 'horizontal',
   overlapMargin = 1,
   children,

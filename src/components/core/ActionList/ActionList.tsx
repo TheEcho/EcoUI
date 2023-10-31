@@ -1,18 +1,17 @@
-import { ReactNode } from 'react'
+import { PropsWithChildren, ReactNode } from 'react'
 
 import { StyledActionList } from './ActionList.styled'
 import { ActionListItem, ActionListItemProps } from './ActionListItem'
 import { ActionListSection, ActionListSectionProps } from './ActionListSection'
-import { WithChildren } from '@/types/WithChildren'
 
-export type ActionListProps = {
+export type ActionListProps = PropsWithChildren<{
   sections?: ActionListSectionProps[]
   items?: ActionListItemProps[]
   flex?: boolean | 'grow' | 'shrink'
   onClick?: (item: any, e?: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
   variants?: 'with-input'
   maxWidth?: string
-} & WithChildren
+}>
 
 export const renderActionListItems = (
   items: ActionListItemProps[],

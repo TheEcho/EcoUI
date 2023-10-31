@@ -1,17 +1,16 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { Button, ButtonProps } from '../../../../Button'
-import { WithChildren } from '@/types/WithChildren'
 
 export type ActionType = 'cancel' | 'action'
 
-type CardAccordionActionProps = {
+type CardAccordionActionProps = PropsWithChildren<{
   onClick: () => void
   loading: boolean
   label?: string
   componentName?: 'CardAccordionAction'
   buttonVariant?: ButtonProps['variant']
-} & WithChildren
+}>
 
 export const CardAccordionAction: FunctionComponent<CardAccordionActionProps> = ({
   onClick,

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from 'react'
+import React, { FunctionComponent, PropsWithChildren, useMemo } from 'react'
 
 import { Box } from '../Box'
 import { Paragraph } from '../Paragraph'
@@ -6,16 +6,15 @@ import { Tooltip } from '../Tooltip'
 import { getColor, NB_MAX_ITEMS_TOOLTIP } from './constant'
 import { OverlapAvatar } from './OverlapAvatar'
 import { TOverlapAvatarsItem } from './types'
-import { WithChildren } from '@/types/WithChildren'
 
-type Props = {
+export type OverlapAvatarsTooltipProps = PropsWithChildren<{
   items: TOverlapAvatarsItem[]
   size?: 'tiny' | 'atomic'
   displayAll?: boolean
   maxItems?: number
-}
+}>
 
-export const OverlapAvatarsTooltip: FunctionComponent<Props & WithChildren> = ({
+export const OverlapAvatarsTooltip: FunctionComponent<OverlapAvatarsTooltipProps> = ({
   items,
   size = 'tiny',
   displayAll = false,
