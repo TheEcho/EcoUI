@@ -29,7 +29,7 @@ type ID = string
  * See Storybook for visual examples.
  */
 export interface InputSearchDropdownProps<T> {
-  forwardRef?: React.Ref<HTMLInputElement>
+  ref?: React.Ref<HTMLInputElement>
   // Search input
   initialQuery?: string
   placeholder?: string
@@ -60,7 +60,7 @@ export interface InputSearchDropdownProps<T> {
 
 export function InputSearchDropdown<T>(props: InputSearchDropdownProps<T>): ReactElement {
   const {
-    forwardRef,
+    ref,
     onClear,
     items,
     ItemRenderer,
@@ -106,7 +106,7 @@ export function InputSearchDropdown<T>(props: InputSearchDropdownProps<T>): Reac
   return (
     <div>
       <Input
-        ref={forwardRef}
+        ref={ref}
         prefix={SearchIcon}
         placeholder={props.placeholder}
         value={textValue || query}

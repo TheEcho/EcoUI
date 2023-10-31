@@ -1,4 +1,4 @@
-import { ChangeEvent, FunctionComponent, ReactElement, useCallback } from 'react'
+import { ChangeEvent, FunctionComponent, ReactElement, forwardRef, useCallback } from 'react'
 
 import { BoxProps } from '@/index'
 
@@ -19,12 +19,11 @@ export type RadioButtonProps = {
   isSelected?: boolean
   direction?: 'column' | 'row'
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
-  forwardRef?: React.Ref<HTMLInputElement>
   variants?: 'primary' | 'secondary'
   disabled?: boolean
 } & BoxProps
 
-export const RadioButton: FunctionComponent<RadioButtonProps> = ({
+export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(({
   id,
   isSelected,
   name,
@@ -33,12 +32,11 @@ export const RadioButton: FunctionComponent<RadioButtonProps> = ({
   description,
   direction = 'row',
   onChange,
-  forwardRef,
   children,
   variants = 'primary',
   disabled = false,
   ...rest
-}) => {
+}, ref) => {
   return (
     <Box {...rest} direction="column" flex={false}>
       <Box direction="row">
@@ -50,7 +48,7 @@ export const RadioButton: FunctionComponent<RadioButtonProps> = ({
           value={value}
           checked={isSelected}
           onChange={onChange}
-          ref={forwardRef}
+          ref={ref}
           disabled={disabled}
         />
 
@@ -74,7 +72,7 @@ export const RadioButton: FunctionComponent<RadioButtonProps> = ({
       </StyledChildrenBox>
     </Box>
   )
-}
+})
 
 export type TypedRadioButtonProps<T extends string> = Omit<
   RadioButtonProps,

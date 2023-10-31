@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useRef } from 'react'
+import React, { forwardRef, useEffect, useRef } from 'react'
 import { useCallback } from 'react'
 
 import { Drop } from '../../core'
@@ -20,7 +20,7 @@ type TProps = {
   onKeyDown?: InputProps['onKeyDown']
 } & Omit<TextAreaProps, 'name' | 'onChange'>
 
-export const InputWithDrop: FunctionComponent<TProps & WithChildren> = ({
+export const InputWithDrop = forwardRef<HTMLInputElement, TProps & WithChildren>(({
   name = '',
   value,
   dropState = false,
@@ -31,14 +31,13 @@ export const InputWithDrop: FunctionComponent<TProps & WithChildren> = ({
   maxHeight,
   textSize,
   onFocus,
-  forwardRef,
   placeholder,
   resetBtnClicked,
   disabled,
   type,
   onKeyDown,
   ...props
-}) => {
+}, ref) => {
   const dropTargetRef = useRef<HTMLDivElement | null>(null)
   const textAreaRef = useRef<HTMLTextAreaElement | null>(null)
 
@@ -89,6 +88,6 @@ export const InputWithDrop: FunctionComponent<TProps & WithChildren> = ({
       )}
     </>
   )
-}
+})
 
 export type InputWithDropProps = TProps

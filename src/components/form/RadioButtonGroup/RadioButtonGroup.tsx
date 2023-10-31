@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, useEffect, useState } from 'react'
+import React, { ChangeEvent, FunctionComponent, forwardRef, useEffect, useState } from 'react'
 
 import { Box, BoxProps, Text } from '@/index'
 
@@ -44,12 +44,11 @@ export type RadioButtonGroupProps = {
    * Error to show for this field
    */
   error?: string | boolean
-  forwardRef?: React.Ref<HTMLInputElement>
 
   variants?: 'primary' | 'secondary'
 } & BoxProps
 
-export const RadioButtonGroup: FunctionComponent<RadioButtonGroupProps> = ({
+export const RadioButtonGroup = forwardRef<HTMLInputElement, RadioButtonGroupProps>(({
   defaultValue,
   selectedValue,
   name,
@@ -58,13 +57,12 @@ export const RadioButtonGroup: FunctionComponent<RadioButtonGroupProps> = ({
   children,
   description,
   subDescription,
-  forwardRef,
   error,
   onChange,
   gap = 'lg-medium',
   variants = 'primary',
   ...rest
-}) => {
+}, ref) => {
   const [value, setValue] = useState<string>('')
 
   const updateValue = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -93,7 +91,7 @@ export const RadioButtonGroup: FunctionComponent<RadioButtonGroupProps> = ({
               description={item.description}
               isSelected={value === item.value}
               onChange={updateValue}
-              forwardRef={forwardRef}
+              ref={ref}
               variants={variants}
             />
           )
@@ -117,4 +115,4 @@ export const RadioButtonGroup: FunctionComponent<RadioButtonGroupProps> = ({
       )}
     </Box>
   )
-}
+})

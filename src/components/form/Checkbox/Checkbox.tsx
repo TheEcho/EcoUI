@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, ReactElement, ReactNode, useMemo } from 'react'
+import React, { ChangeEvent, FunctionComponent, ReactElement, ReactNode, forwardRef, useMemo } from 'react'
 
 import { Box, BoxProps } from '../../core/Box'
 import { TextProps } from '../../core/Text'
@@ -24,7 +24,7 @@ export type CheckboxProps = {
   variant?: 'primary' | 'secondary'
 } & BoxProps
 
-export const Checkbox: FunctionComponent<CheckboxProps> = ({
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
   id,
   checked,
   groupName,
@@ -32,12 +32,11 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
   label,
   optionalElement,
   onChange,
-  forwardRef,
   disabled = false,
   rounded = false,
   variant = 'primary',
   ...rest
-}) => {
+}, ref) => {
   const textProps: TextProps = useMemo(() => {
     const isSecondary = variant === 'secondary'
 
@@ -70,7 +69,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
           value={value}
           checked={checked}
           onChange={onChange}
-          ref={forwardRef}
+          ref={ref}
           disabled={disabled}
           rounded={rounded}
           variant={variant}
@@ -97,4 +96,4 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
       )}
     </StyledCheckbox>
   )
-}
+})

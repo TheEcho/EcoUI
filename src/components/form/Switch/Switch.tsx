@@ -1,4 +1,4 @@
-import type { ChangeEvent, FunctionComponent } from 'react'
+import { forwardRef, type ChangeEvent } from 'react'
 
 import { StyledContainer, StyledInput, StyledSlider } from './Switch.styled'
 
@@ -6,20 +6,18 @@ type TProps = {
   name?: string
   value?: boolean
   disabled?: boolean
-  forwardRef?: React.Ref<HTMLInputElement>
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Switch: FunctionComponent<TProps> = ({
+export const Switch = forwardRef<HTMLInputElement, TProps>(({
   value,
-  forwardRef,
   disabled = false,
   onChange,
   ...props
-}) => (
+}, ref) => (
   <StyledContainer>
     <StyledInput
-      ref={forwardRef}
+      ref={ref}
       type="checkbox"
       checked={value}
       {...(disabled ? { disabled: true } : { onChange })}
@@ -27,6 +25,6 @@ export const Switch: FunctionComponent<TProps> = ({
     />
     <StyledSlider disabled={disabled} />
   </StyledContainer>
-)
+))
 
 export type TSwitchProps = TProps

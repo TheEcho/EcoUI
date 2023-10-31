@@ -1,18 +1,17 @@
-import { FunctionComponent, useCallback } from 'react'
+import { FunctionComponent, forwardRef, useCallback } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 import { StyledContainer, StyledIcon, StyledSelect } from './Select.styled'
 
 export type SelectProps = {
   name: string
-  forwardRef?: React.Ref<HTMLSelectElement>
   value?: string
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void
   onFocus?: (e: React.FocusEvent<HTMLSelectElement>) => void
   disabled?: boolean
 }
 
-export const Select: FunctionComponent<SelectProps> = ({ name, forwardRef, ...rest }) => {
+export const Select = forwardRef<HTMLSelectElement, SelectProps>(({ name, ...rest }, ref) => {
   return (
     <StyledContainer
       align="center"
@@ -21,13 +20,13 @@ export const Select: FunctionComponent<SelectProps> = ({ name, forwardRef, ...re
       direction="row"
       position="relative"
     >
-      <StyledSelect ref={forwardRef} name={name} {...rest} />
+      <StyledSelect ref={ref} name={name} {...rest} />
       {rest.disabled !== true && (
         <StyledIcon icon={<ChevronDownIcon />} color="text-light" size="small" />
       )}
     </StyledContainer>
   )
-}
+})
 
 export type SelectNullableProps = Omit<SelectProps, 'onChange' | 'value'> & {
   onChange?: (value: string | undefined | null) => void

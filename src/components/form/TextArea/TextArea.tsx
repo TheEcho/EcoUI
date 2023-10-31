@@ -1,4 +1,4 @@
-import React, { FocusEvent, FunctionComponent, ReactNode, useState } from 'react'
+import React, { FocusEvent, FunctionComponent, ReactNode, forwardRef, useState } from 'react'
 
 import { TTextSize, TTextWeight } from '../../../shared/tokens/text'
 import { Text } from '../../core'
@@ -15,7 +15,6 @@ export type TextAreaProps = {
   onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
   prefix?: ReactNode | string
   suffix?: ReactNode | string
-  forwardRef?: React.Ref<HTMLTextAreaElement>
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
   onKeyPress?: (event: React.KeyboardEvent<HTMLTextAreaElement>) => void
   variant?: 'default' | 'no-border'
@@ -27,7 +26,7 @@ export type TextAreaProps = {
   disabled?: boolean
 }
 
-export const TextArea: FunctionComponent<TextAreaProps> = ({
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({
   error,
   name,
   value,
@@ -36,14 +35,13 @@ export const TextArea: FunctionComponent<TextAreaProps> = ({
   onFocus,
   prefix,
   suffix,
-  forwardRef,
   variant = 'default',
   height = 10,
   textAreaSize = 'default',
   onChange,
   disabled = false,
   ...rest
-}) => {
+}, ref) => {
   const [active, setActive] = useState(false)
   const handleOnFocus = (event: FocusEvent<HTMLTextAreaElement>): void => {
     setActive(true)
@@ -83,7 +81,7 @@ export const TextArea: FunctionComponent<TextAreaProps> = ({
         onChange={onChange}
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
-        ref={forwardRef}
+        ref={ref}
         name={name}
         value={value}
         defaultValue={defaultValue}
@@ -92,4 +90,4 @@ export const TextArea: FunctionComponent<TextAreaProps> = ({
       {suffixContent}
     </TextAreaContainer>
   )
-}
+})
