@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import * as heroiconsOutline from '@heroicons/react/24/outline'
 
 import { svgSizes, TSVGSizeEnum } from '../../../shared/tokens/svg'
-import { Box, Icon, Text } from '../../core'
+import { Box, Grid, Icon, Text } from '../../core'
 import { Meta } from '@storybook/react'
 
 type HeroIcon = (props?: React.ComponentProps<'svg'>) => JSX.Element;
@@ -31,12 +31,14 @@ const allSizes = Object.keys(svgSizes).map((size) => size) as TSVGSizeEnum[]
 
 export const AllIcons: FunctionComponent = () => (
   <Box margin="small" direction="column" gap="medium" paddingBottom="small">
-    {Object.keys(allIcons).map((icon, index) => (
-      <Box key={index} align="center" gap="medium" direction="row">
-        <Icon icon={allIcons[icon]} />
-        <Text>{icon}</Text>
-      </Box>
-    ))}
+    <Grid itemPerRow={4} gap='medium'>
+      {Object.keys(allIcons).map((icon, index) => (
+        <Box key={index} align="center" gap="medium" direction="column">
+          <Icon icon={allIcons[icon]} />
+          <Text color="text-light">{icon}</Text>
+        </Box>
+      ))}
+    </Grid>
   </Box>
 )
 

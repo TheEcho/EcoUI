@@ -31,7 +31,7 @@ export const Icon: FunctionComponent<IconProps & WithChildren> = ({
   icon,
   url,
   size = 'large',
-  color = 'transparent',
+  color = 'text',
   children,
   ...rest
 }) => {

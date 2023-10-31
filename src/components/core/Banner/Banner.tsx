@@ -35,7 +35,7 @@ export const Banner: FunctionComponent<BannerProps> = ({
   return (
     <StyledBanner {...rest} flex={flex} variant={variant} align="start">
       <Box flex={false} justify="center">
-        <Icon icon={bannerConfig.icon} size="sm-medium" />
+        <Icon icon={bannerConfig.icon} size="sm-medium" color={bannerConfig.color} />
       </Box>
       <StyledBannerContent direction="column" gap="lg-medium" marginHorizontal="sm-medium">
         <Box direction="column" gap="small">

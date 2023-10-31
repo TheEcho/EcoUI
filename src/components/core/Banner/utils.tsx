@@ -1,6 +1,6 @@
 import { TColor } from '../../../shared/tokens/color'
 import { TBannerVariant } from './Banner.styled'
-import { CheckCircleIcon, ExclamationTriangleIcon, ExclamationCircleIcon, InformationCircleIcon } from '@heroicons/react/24/outline'
+import { CheckCircleIcon, ExclamationTriangleIcon, InformationCircleIcon } from '@heroicons/react/24/outline'
 import { IconProps } from '../Icon'
 
 type TBannerConfig = {
@@ -21,7 +21,7 @@ export const BANNER_CONFIG: Record<TBannerVariant, TBannerConfig> = {
     textColor: 'critical-ink',
   },
   warning: {
-    icon: <ExclamationCircleIcon />,
+    icon: <ExclamationTriangleIcon />,
     color: 'warning',
     textColor: 'warning-ink',
   },

@@ -24,7 +24,7 @@ const svgColorStyles = (props: StyledSvgIconPropsWithTheme): CSSObject => {
     svg: {
       '& > *': {
         ...(props.color && {
-          fill: props.theme.color[props.color],
+          stroke: props.theme.color[props.color],
         }),
       },
     },

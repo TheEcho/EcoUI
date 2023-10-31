@@ -25,7 +25,7 @@ export const Simple: FunctionComponent = () => {
         { label: 'Item je suis', value: '2' },
         { label: 'Es-tu un item', value: '3' },
       ]}
-      placeholder="Rechercher dans le plan comptable"
+      placeholder="Recherche global"
     />
   )
 }
@@ -51,7 +51,7 @@ export const ShowOnClick: FunctionComponent = () => {
             { label: 'Item je suis', value: 'Item je suis' },
             { label: 'Es-tu un item', value: 'Es-tu un item' },
           ]}
-          placeholder="Rechercher dans le plan comptable"
+          placeholder="Recherche global"
         />
       )}
     </Box>
