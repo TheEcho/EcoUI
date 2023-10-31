@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { StyledDescriptionList } from './DescriptionList.styled'
 
-export const DescriptionList: FunctionComponent = ({ ...rest }) => {
+export const DescriptionList: FunctionComponent<PropsWithChildren> = ({ ...rest }) => {
   return <StyledDescriptionList {...rest} />
 }

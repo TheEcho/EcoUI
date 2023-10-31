@@ -2,16 +2,19 @@ import React, { FunctionComponent, useState } from 'react'
 
 import { ActionListItem, Box, Heading, Icon } from '../../'
 import { InputSelectAutocomplete, TInputSelectAutocompleteItem } from './InputSelectAutocomplete'
+import { XMarkIcon } from '@heroicons/react/24/outline'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/InputSelectAutocomplete',
   component: InputSelectAutocomplete,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof InputSelectAutocomplete>
 
 const items: TInputSelectAutocompleteItem[] = [
   { label: 'aze', value: '1', description: 'description' },
   { label: 'rty', value: '2' },
-  { label: 'uio', value: '3', role: 'action', icon: 'icon-close' },
+  { label: 'uio', value: '3', role: 'action', icon: <XMarkIcon /> },
   { label: 'qsd', value: '4' },
   { label: 'fgh', value: '5' },
   { label: 'wxc', value: '6' },

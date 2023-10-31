@@ -7,6 +7,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box, ObjectList } from '../../core'
 import ObjectListItem, { ObjectListItemProps } from '../ObjectList/ObjectListItem'
+import { Meta } from '@storybook/react'
 
 const onMoreClick = action('button onMoreClick')
 const onItemClick = action('onItemClick')
@@ -15,7 +16,8 @@ export default {
   title: 'Core/ObjectList',
   decorators: [withKnobs],
   component: ObjectList,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof ObjectList>
 
 export const SimpleObjectList: FunctionComponent = () => {
   const data: ObjectListItemProps[] = [
@@ -114,7 +116,7 @@ export const LoadMoreObjectList: FunctionComponent = () => {
 
   return (
     <ObjectList
-      css={css`
+      css={() => css`
         overflow: auto;
         max-height: 200px !important;
       `}

@@ -4,12 +4,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box, Button } from '../../core'
 import GlobalSearch from './GlobalSearch'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/GlobalSearch',
   decorators: [withKnobs],
   component: GlobalSearch,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof GlobalSearch>
 
 export const Simple: FunctionComponent = () => {
   return (

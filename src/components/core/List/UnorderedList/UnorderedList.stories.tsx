@@ -3,11 +3,13 @@ import React, { FunctionComponent } from 'react'
 import { Box, Text } from '../../../core'
 import { ListItem } from '../ListItem/ListItem'
 import { UnorderedList } from './UnorderedList'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Lists/Unordered List',
   component: UnorderedList,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof UnorderedList>
 
 export const BulletList: FunctionComponent = () => (
   <Box padding="small">

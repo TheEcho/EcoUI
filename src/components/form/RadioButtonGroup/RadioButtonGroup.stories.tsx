@@ -5,11 +5,13 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { Box } from '../../core'
 import { RadioButton, RadioButtonProps } from '../RadioButton'
 import { RadioButtonGroup } from './RadioButtonGroup'
+import { Meta } from '@storybook/react'
 export default {
   title: 'Core/Form/RadioGroup',
   decorators: [withKnobs],
   component: RadioButtonGroup,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof RadioButtonGroup>
 
 export const Simple: FunctionComponent = () => {
   const options: RadioButtonProps[] = [

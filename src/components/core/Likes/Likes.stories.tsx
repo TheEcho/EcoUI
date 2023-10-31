@@ -4,12 +4,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box } from '..'
 import { Likes } from './Likes'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Likes',
   decorators: [withKnobs],
   component: Likes,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Likes>
 
 export const Simple: FunctionComponent = () => (
   <Box flex={false}>

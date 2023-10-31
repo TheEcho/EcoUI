@@ -9,12 +9,14 @@ import { RangeInputWithDrop } from '../../form/InputWithDrop/RangeInputWithDrop'
 import { Select, SelectOption } from '../../form/Select'
 import Button from '../Button'
 import VirtualScroller from './VirtualScroller'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Virtual Scroller',
   decorators: [withKnobs],
   component: VirtualScroller,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof VirtualScroller>
 
 const items: { label: string; value: number }[] = []
 for (let i = 0; i < 1000; i++) {

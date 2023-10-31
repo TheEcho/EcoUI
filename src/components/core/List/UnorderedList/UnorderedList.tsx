@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { TColor } from '../../../../shared/tokens/color'
 import { StyledUnorderedList } from './UnorderedList.styled'
@@ -10,7 +10,7 @@ export type UnorderedListProps = {
   bulletColor?: TColor
 }
 
-export const UnorderedList: FunctionComponent<UnorderedListProps> = ({
+export const UnorderedList: FunctionComponent<PropsWithChildren<UnorderedListProps>> = ({
   bulletColor = 'text',
   ...rest
 }) => {

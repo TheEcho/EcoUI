@@ -1,9 +1,8 @@
 import { identity } from 'lodash'
-import { FC, useMemo, useState } from 'react'
+import React, { FC, useMemo, useState } from 'react'
 
 import styled from '@emotion/styled'
-
-import { CircleIcon } from '@bellman-monorepo/design-system/components/core'
+import { HomeIcon } from '@heroicons/react/24/outline'
 
 import { Box } from '../../core/Box'
 import {
@@ -12,11 +11,14 @@ import {
 } from '../../core/ContentSearchItem/ContentSearchItem'
 import { Text } from '../../core/Text'
 import { InputSearchDropdown } from './InputSearchDropdown'
+import { Icon } from '../../core'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/InputSearchDropdown',
   component: InputSearchDropdown,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof InputSearchDropdown>
 
 const items = [
   'aze',
@@ -98,8 +100,8 @@ export const BasicTextSearchDropdownWithCreateButton: FC = () => {
 }
 
 const houseIcon = (
-  <CircleIcon
-    icon="far fa-house-chimney-user"
+  <Icon
+    icon={<HomeIcon />}
     size="large"
     color="icon-blue"
     iconColor="background"

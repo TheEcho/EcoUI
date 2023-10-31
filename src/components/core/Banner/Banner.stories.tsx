@@ -4,12 +4,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box, Heading } from '..'
 import { Banner, BannerProps } from '.'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Banner',
   decorators: [withKnobs],
   component: Banner,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Banner>
 
 const defaultOnClick = () => {
   //

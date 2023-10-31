@@ -4,12 +4,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box } from '../../core'
 import Dropdown from './Dropdown'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Dropdown',
   decorators: [withKnobs],
   component: Dropdown,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Dropdown>
 
 export const Simple: FunctionComponent = () => (
   <div>

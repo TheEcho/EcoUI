@@ -5,11 +5,13 @@ import { action } from '@storybook/addon-actions'
 import Button from '../Button'
 import Dropdown from '../Dropdown'
 import { Toolbar } from './Toolbar'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Toolbar',
   component: Toolbar,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Toolbar>
 
 const onClick = action('button onClick')
 

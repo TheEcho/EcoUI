@@ -4,12 +4,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box } from '../../core'
 import { Badge } from './Badge'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Badge',
   decorators: [withKnobs],
   component: Badge,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Badge>
 
 export const RedBadgeExample: FunctionComponent = () => (
   <Box margin="small" direction="row" gap="medium">

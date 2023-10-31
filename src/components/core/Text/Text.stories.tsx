@@ -5,12 +5,14 @@ import { select, text, withKnobs } from '@storybook/addon-knobs'
 import { TTextSize } from '../../../shared/tokens/text'
 import { Box } from '../../core/Box'
 import { Text } from './Text'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Text',
   decorators: [withKnobs],
   component: Text,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Text>
 
 const textSizeOptions: { [key in TTextSize]: TTextSize } = {
   xsmall: 'xsmall',

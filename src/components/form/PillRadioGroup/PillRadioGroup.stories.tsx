@@ -2,19 +2,20 @@ import React, { FunctionComponent, useState } from 'react'
 
 import { withKnobs } from '@storybook/addon-knobs'
 
-import { AllIcones } from '@/index'
-
-import { Box, Icon } from '../../core'
+import { Box, Icon, IconProps } from '../../core'
 import { PillRadioGroup } from './PillRadioGroup'
+import { BuildingLibraryIcon, BuildingOfficeIcon, HomeIcon } from '@heroicons/react/24/outline'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/PillRadioGroup',
   decorators: [withKnobs],
   component: PillRadioGroup,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof PillRadioGroup>
 
 // Used to avoid eslint rule about component "missing display name"
-const getIconComponent = (icon: AllIcones, selected: boolean) => (
+const getIconComponent = (icon: IconProps['icon'], selected: boolean) => (
   <Icon icon={icon} size="small" color={selected ? 'secondary' : 'text'} />
 )
 
@@ -36,18 +37,18 @@ const choices = [
 const choicesWithPrefixIcon = [
   {
     value: '1',
-    label: 'cow',
-    prefixContent: (selected: boolean) => getIconComponent('far fa-cow', selected),
+    label: 'Library',
+    prefixContent: (selected: boolean) => getIconComponent(<BuildingLibraryIcon />, selected),
   },
   {
     value: '2',
-    label: 'pig',
-    prefixContent: (selected: boolean) => getIconComponent('far fa-pig', selected),
+    label: 'Office',
+    prefixContent: (selected: boolean) => getIconComponent(<BuildingOfficeIcon />, selected),
   },
   {
     value: '3',
-    label: 'mouse',
-    prefixContent: (selected: boolean) => getIconComponent('far fa-mouse', selected),
+    label: 'House',
+    prefixContent: (selected: boolean) => getIconComponent(<HomeIcon />, selected),
   },
 ]
 

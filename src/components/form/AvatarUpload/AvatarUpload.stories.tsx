@@ -4,6 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box, Button } from '../../core'
 import { AvatarUpload } from './AvatarUpload'
+import { Meta } from '@storybook/react'
 
 const EXAMPLE_IMAGE_URL =
   'https://images.unsplash.com/photo-1525268499284-86ec700c826d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nzd8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
@@ -12,7 +13,8 @@ export default {
   title: 'Core/Form/AvatarUpload',
   decorators: [withKnobs],
   component: AvatarUpload,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof AvatarUpload>
 
 export const WithoutValue: FC = () => {
   return <AvatarUpload name="avatarUrl" />

@@ -1,16 +1,19 @@
 import React, { FunctionComponent } from 'react'
 
+import { ClockIcon, PlayIcon } from '@heroicons/react/24/outline'
 import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 
 import { Box, Icon, Text } from '../../core'
 import { Button, ButtonProps } from './Button'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Button',
   decorators: [withKnobs],
   component: Button,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Button>
 
 const onClick = action('button onClick')
 
@@ -41,7 +44,7 @@ const TextBtn: FunctionComponent<ButtonProps> = (props) => (
 )
 
 const IconOnly: FunctionComponent<ButtonProps> = (props) => (
-  <Button variant="secondary" icon={<Icon icon="icon-clock" />} {...props} />
+  <Button variant="secondary" icon={<Icon icon={<ClockIcon />} color="text-lighter" />} {...props} />
 )
 
 export const allVariants: FunctionComponent = (props) => (
@@ -80,14 +83,14 @@ export { Ghost, Outline, Primary, Secondary, TextBtn }
 
 export const WithIcon: FunctionComponent = () => (
   <Button
-    icon={<Icon icon="icon-play" color="text-lighter" />}
+    icon={<Icon icon={<ClockIcon />} color="primary" />}
     onClick={onClick}
     variant="primary"
   />
 )
 export const WithLabelIcon: FunctionComponent = () => (
   <Button
-    icon={<Icon icon="icon-clock" color="text-lighter" />}
+    icon={<Icon icon={<PlayIcon />} color="text-lighter" />}
     onClick={onClick}
     variant="primary"
     buttonSize="small"
@@ -97,7 +100,7 @@ export const WithLabelIcon: FunctionComponent = () => (
 export const WithLabelIconReverse: FunctionComponent = () => (
   <Button
     label="Button"
-    icon={<Icon icon="icon-play" color="text-lighter" />}
+    icon={<Icon icon={<ClockIcon />} color="primary" />}
     onClick={onClick}
     variant="primary"
     reverse

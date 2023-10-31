@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import { TColor } from '../../../../shared/tokens/color'
 import { StyledOrderedList } from './OrderedList.styled'
@@ -9,7 +9,7 @@ export type OrderedListProps = {
    */
   bulletColor?: TColor
 }
-export const OrderedList: FunctionComponent<OrderedListProps> = ({
+export const OrderedList: FunctionComponent<PropsWithChildren<OrderedListProps>> = ({
   bulletColor = 'text',
   ...rest
 }) => {

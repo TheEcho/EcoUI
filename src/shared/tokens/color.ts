@@ -72,6 +72,7 @@ export const color = {
 
   // Other colors
   'underline-yellow': '#FFFE54',
+  'transparent': 'transparent'
 }
 
 export type TColor = keyof typeof color

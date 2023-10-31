@@ -1,12 +1,10 @@
-import moment from 'moment'
-import { FC } from 'react'
+import React, { FC } from 'react'
 
 import { withKnobs } from '@storybook/addon-knobs'
 
 import { Avatar } from '../Avatar'
 import { Box } from '../Box'
 import Button from '../Button'
-import { DateFromNow } from '../DateFromNow'
 import { Heading } from '../Heading'
 import Icon from '../Icon'
 import { ObjectList } from '../ObjectList'
@@ -14,12 +12,14 @@ import { Paragraph } from '../Paragraph'
 import { Text } from '../Text'
 import { RawNotificationItemContent } from './Notification.styled'
 import { RawNotificationItem } from './RawNotificationItem'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Notification/NotificationItem',
   decorators: [withKnobs],
-  component: Notification,
-}
+  component: RawNotificationItem,
+  tags: ['autodocs'],
+} satisfies Meta<typeof RawNotificationItem>
 
 const NotificationTitle: FC = () => {
   return (
@@ -57,14 +57,8 @@ const NotificationAction: FC = () => {
   )
 }
 
-const notificationDate = moment
-  .utc()
-  .subtract(Math.random() * 48, 'hour')
-  .toLocaleString()
-
 const subtitle = (
   <Box direction="row" gap="small">
-    <DateFromNow color="text-light" date={notificationDate} />
     <Text size="small">{`· 24, rue Volga 75100 Paris`}</Text>
   </Box>
 )

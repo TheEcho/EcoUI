@@ -3,11 +3,13 @@ import React, { FunctionComponent } from 'react'
 import { Box } from '..'
 import { Paragraph } from '../Paragraph'
 import Link from './Link'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Link',
   component: Link,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Link>
 
 export const WithLabel: FunctionComponent = () => (
   <Link label="Go to Google" href="https://google.com" target="_blank" />

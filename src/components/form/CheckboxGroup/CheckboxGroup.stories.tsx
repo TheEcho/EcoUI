@@ -4,45 +4,47 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box } from '../../core'
 import { Input } from '..'
-import { CheckBoxProps } from '../CheckBox'
-import { CheckBoxGroup } from './CheckboxGroup'
+import { CheckboxProps } from '../Checkbox'
+import { CheckboxGroup } from './CheckboxGroup'
+import { Meta } from '@storybook/react'
 
 export default {
-  title: 'Core/Form/CheckBoxGroup',
+  title: 'Core/Form/CheckboxGroup',
   decorators: [withKnobs],
-  component: CheckBoxGroup,
-}
+  component: CheckboxGroup,
+  tags: ['autodocs'],
+} satisfies Meta<typeof CheckboxGroup>
 
 export const Simple: FunctionComponent = () => {
-  const options: CheckBoxProps[] = [
+  const options: CheckboxProps[] = [
     {
       id: 'ascenceur',
       value: 'ascenseur',
       label: 'Ascenseur',
-      isSelected: false,
+      checked: false,
     },
     {
       id: 'escalier',
       value: 'escalier',
       label: 'Escalier',
-      isSelected: false,
+      checked: false,
     },
     {
       id: 'piscine',
       value: 'piscine',
       label: 'Piscine',
-      isSelected: true,
+      checked: true,
     },
     {
       id: 'spa',
       value: 'spa',
       label: 'Spa',
-      isSelected: true,
+      checked: true,
     },
   ]
   return (
     <Box margin="small">
-      <CheckBoxGroup
+      <CheckboxGroup
         name="options-choice"
         description="Vos options"
         options={options}
@@ -53,30 +55,30 @@ export const Simple: FunctionComponent = () => {
 }
 
 export const VerticalWithInput: FunctionComponent = () => {
-  const options: CheckBoxProps[] = [
+  const options: CheckboxProps[] = [
     {
       id: 'montant',
       value: 'montant',
       label: 'Le montant',
-      isSelected: true,
+      checked: true,
       optionalElement: <Input suffix="€ HT" />,
     },
     {
       id: 'poste',
       value: 'poste',
       label: 'Les frais d’expédition par la poste',
-      isSelected: false,
+      checked: false,
     },
     {
       id: 'transporteur',
       value: 'transporteur',
       label: 'Les frais d’expédition par un autre transporteur',
-      isSelected: false,
+      checked: false,
     },
   ]
   return (
     <Box margin="small">
-      <CheckBoxGroup
+      <CheckboxGroup
         name="options-choice"
         description="Vous connaissez…"
         options={options}
@@ -86,29 +88,29 @@ export const VerticalWithInput: FunctionComponent = () => {
   )
 }
 export const VerticalWithError: FunctionComponent = () => {
-  const options: CheckBoxProps[] = [
+  const options: CheckboxProps[] = [
     {
       id: 'montant',
       value: 'montant',
       label: 'Le montant',
-      isSelected: false,
+      checked: false,
     },
     {
       id: 'poste',
       value: 'poste',
       label: 'Les frais d’expédition par la poste',
-      isSelected: false,
+      checked: false,
     },
     {
       id: 'transporteur',
       value: 'transporteur',
       label: 'Les frais d’expédition par un autre transporteur',
-      isSelected: false,
+      checked: false,
     },
   ]
   return (
     <Box margin="small">
-      <CheckBoxGroup
+      <CheckboxGroup
         name="panne"
         description="Vous préférez avoir…"
         options={options}

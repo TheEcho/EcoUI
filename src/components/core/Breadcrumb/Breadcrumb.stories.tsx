@@ -5,12 +5,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { Box, Link, Text } from '../../core'
 import { Breadcrumb } from './Breadcrumb'
 import { data } from './Breadcrumb.data'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Breadcrumb',
   decorators: [withKnobs],
   component: Breadcrumb,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Breadcrumb>
 
 export const All: FunctionComponent = () => {
   return (

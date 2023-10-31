@@ -4,12 +4,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box, Icon } from '..'
 import { DropItem } from './DropItem'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/DropItem',
   decorators: [withKnobs],
   component: DropItem,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof DropItem>
 
 const handleClick = () => {
   console.log('clicked')

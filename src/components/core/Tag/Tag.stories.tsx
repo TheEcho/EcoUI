@@ -3,9 +3,9 @@ import React, { FunctionComponent } from 'react'
 import { action } from '@storybook/addon-actions'
 
 import { Box, Icon } from '../../core'
-import { AccountTag } from './AccountTag'
 import { RemovableFilterTag } from './RemovableFilterTag'
 import Tag from './Tag'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Tag',
@@ -17,7 +17,8 @@ export default {
     ),
   ],
   component: Tag,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Tag>
 
 const removableFilterClick = action('removableFilter Click')
 
@@ -97,8 +98,6 @@ export const RemovableFilter: FunctionComponent = () => (
     onClick={removableFilterClick}
   />
 )
-
-export const SpecializedAccountTag: FunctionComponent = () => <AccountTag label="615" />
 
 export const TagWithEllipsis: FunctionComponent = () => (
   <Tag

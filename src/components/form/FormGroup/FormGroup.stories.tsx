@@ -4,12 +4,14 @@ import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 
 import { Input } from '../Input'
 import { FormGroup } from './FormGroup'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/FormGroup',
   decorators: [withKnobs],
   component: FormGroup,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof FormGroup>
 
 export const Simple: FunctionComponent = () => (
   <FormGroup title="Objet" input={{ id: 'inputId' }}>

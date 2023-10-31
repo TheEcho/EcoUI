@@ -6,12 +6,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { Box, Icon, Text } from '../../core'
 import { Input } from '..'
 import { Checkbox } from './Checkbox'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/Checkbox',
   decorators: [withKnobs],
   component: Checkbox,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Checkbox>
 
 const onChangeAction = action('onChange Checkbox')
 

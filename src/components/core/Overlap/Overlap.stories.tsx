@@ -7,12 +7,14 @@ import Box from '../Box'
 import Icon from '../Icon'
 import IconHighlight from '../IconHighlight'
 import Overlap from './Overlap'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Overlap',
   decorators: [withKnobs],
   component: Overlap,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Overlap>
 
 const Circle = styled.div<{ color: string }>`
   width: 30px;

@@ -1,10 +1,11 @@
-import moment from 'moment'
 import React, { FunctionComponent, ReactElement, ReactNode, useState } from 'react'
 
 import { Box, Button, Text } from '../..'
 import { InputWithDrop } from '.'
 import { DateRangeInputWithDrop } from './DateRangeInputWithDrop/DateRangeInputWithDrop'
 import { RangeInputWithDrop } from './RangeInputWithDrop'
+import dayjs from 'dayjs'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/InputWithDrop',
@@ -12,9 +13,10 @@ export default {
   decorators: [
     (component: () => ReactNode): ReactElement => <Box margin="large">{component()}</Box>,
   ],
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof InputWithDrop>
 
-const parseDate = (date: string): Date => moment.utc(date, 'DD/MM/YYYY', true).toDate()
+const parseDate = (date: string): Date => dayjs(date, 'DD/MM/YYYY', true).toDate()
 
 const items = [
   {

@@ -4,12 +4,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Paragraph, Text } from '..'
 import Tooltip from './Tooltip'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Tooltip',
   decorators: [withKnobs],
   component: Tooltip,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Tooltip>
 
 export const TooltipTop: FunctionComponent = () => (
   <Tooltip direction="row" justify="center" label="Here is a default tooltip">
@@ -28,7 +30,6 @@ export const TooltipFloat: FunctionComponent = () => (
     direction="row"
     justify="center"
     label="Here is a tooltip following cursor"
-    effect="float"
   >
     <Text>Following tooltip</Text>
   </Tooltip>

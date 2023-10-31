@@ -5,12 +5,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { Box } from '../../core/Box'
 import { Heading } from '../../core/Heading'
 import { PasswordInput } from '.'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/Input',
   decorators: [withKnobs],
   component: PasswordInput,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof PasswordInput>
 
 export const PasswordVariant: FunctionComponent = () => (
   <Box direction="column" padding="xlarge" gap="large">

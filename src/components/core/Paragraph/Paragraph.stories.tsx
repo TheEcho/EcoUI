@@ -5,12 +5,14 @@ import { select, text, withKnobs } from '@storybook/addon-knobs'
 import { TTextSize } from '../../../shared/tokens/text'
 import { Box } from '../../core'
 import Paragraph from './Paragraph'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Paragraph',
   decorators: [withKnobs],
   component: Paragraph,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Paragraph>
 
 const loremIpsum =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et urna mi. Nulla quis auctor nulla. Integer congue porta commodo. Pellentesque orci lectus, rhoncus id congue et, semper a felis'

@@ -1,10 +1,13 @@
 import React, { FC } from 'react'
 
 import { Avatar } from './Avatar'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Avatar',
-}
+  component: Avatar,
+  tags: ['autodocs'],
+} satisfies Meta<typeof Avatar>
 
 export const Normal: FC = () => {
   return <Avatar firstName="Jorrys" height={24} width={24} />

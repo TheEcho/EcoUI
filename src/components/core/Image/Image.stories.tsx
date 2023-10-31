@@ -4,12 +4,15 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import Box from '../Box'
 import Image from './Image'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Image',
   decorators: [withKnobs],
   component: Image,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Image>
+
 //TODO: implement loading, fallback, auto-sizing ?
 
 export const SimpleImage: FunctionComponent = () => (

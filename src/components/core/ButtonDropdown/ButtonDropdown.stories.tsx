@@ -5,12 +5,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { Box } from '../../core'
 import Icon from '../Icon'
 import ButtonDropdown from './ButtonDropdown'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/ButtonDropdown',
   decorators: [withKnobs],
   component: ButtonDropdown,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof ButtonDropdown>
 
 export const Simple: FunctionComponent = () => (
   <div>

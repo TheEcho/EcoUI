@@ -7,12 +7,14 @@ import { Badge, Box, Button, Icon, Text } from '../../core'
 import SideBar from './SideBar'
 import { SideBarItem } from './SideBarItem'
 import { SideBarSection } from './SideBarSection'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/SideBar',
   decorators: [withKnobs],
   component: SideBar,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof SideBar>
 
 const onItemClick = action('sideBarItem onClick')
 const onClickClose = action('Button onClick close')

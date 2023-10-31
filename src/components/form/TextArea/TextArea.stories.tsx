@@ -4,12 +4,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box } from '../../core'
 import { TextArea } from './TextArea'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/TextArea',
   decorators: [withKnobs],
   component: TextArea,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof TextArea>
 
 export const SimpleTextArea: FunctionComponent = () => (
   <Box margin="small" direction="column" gap="large">

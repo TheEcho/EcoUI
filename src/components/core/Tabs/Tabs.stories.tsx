@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState } from 'react'
 
 import { Box, Text } from '..'
 import { Tab, Tabs } from '.'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Tabs',
@@ -13,8 +14,8 @@ export default {
     ),
   ],
   component: Tabs,
-  subcomponents: { Tab },
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Tabs>
 
 export const TabsWithSelection: FunctionComponent = () => {
   const [selectedTab, selectTab] = useState<null | 1 | 2 | 3>(null)
@@ -24,19 +25,16 @@ export const TabsWithSelection: FunctionComponent = () => {
         {
           title: 'Alphabet',
           onClick: () => selectTab(1),
-          icon: 'fa-font-case',
           selected: selectedTab === 1,
         },
         {
           title: 'Mouse',
           onClick: () => selectTab(2),
-          icon: 'far fa-mouse',
           selected: selectedTab === 2,
         },
         {
           title: 'Gamepad',
           onClick: () => selectTab(3),
-          icon: 'fa-gamepad',
           selected: selectedTab === 3,
         },
       ]}
@@ -91,19 +89,16 @@ export const SmallTabsWithSelection: FunctionComponent = () => {
         {
           title: 'Alphabet',
           onClick: () => selectTab(1),
-          icon: 'fa-font-case',
           selected: selectedTab === 1,
         },
         {
           title: 'Mouse',
           onClick: () => selectTab(2),
-          icon: 'fa-mouse',
           selected: selectedTab === 2,
         },
         {
           title: 'Gamepad',
           onClick: () => selectTab(3),
-          icon: 'fa-gamepad',
           selected: selectedTab === 3,
         },
       ]}
@@ -138,41 +133,35 @@ export const CompleteExample: FunctionComponent = () => {
           {
             title: 'Pikachu',
             color: 'icon-yellow',
-            icon: 'fa-bolt',
             onClick: () => selectTab('Pikachu'),
             selected: selectedTab === 'Pikachu',
           },
           {
             title: 'Squirtle',
             color: 'icon-blue',
-            icon: 'fa-turtle',
             onClick: () => selectTab('Squirtle'),
             selected: selectedTab === 'Squirtle',
           },
           {
             title: 'Charmander',
             color: 'primary',
-            icon: 'fa-fire',
             onClick: () => selectTab('Charmander'),
             selected: selectedTab === 'Charmander',
           },
           {
             title: 'Bulbasaur',
             color: 'icon-green',
-            icon: 'fa-leaf',
             onClick: () => selectTab('Bulbasaur'),
             selected: selectedTab === 'Bulbasaur',
           },
           {
             title: 'Dratini',
             color: 'icon-dark-purple',
-            icon: 'fa-dragon',
             onClick: () => selectTab('Dratini'),
             selected: selectedTab === 'Dratini',
           },
           {
             title: 'Mewtwo (not available)',
-            icon: 'fa-head-side-brain',
             disabled: true,
           },
         ]}

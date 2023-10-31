@@ -5,12 +5,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box, Paragraph, Text } from '../../core'
 import { RadioButton } from './RadioButton'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/Radio',
   decorators: [withKnobs],
   component: RadioButton,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof RadioButton>
 
 const onChangeAction = action('onChange radioButton')
 

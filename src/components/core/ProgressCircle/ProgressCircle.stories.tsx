@@ -4,12 +4,14 @@ import { select, withKnobs } from '@storybook/addon-knobs'
 
 import Box from '../Box'
 import { ProgressCircle } from './ProgressCircle'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/ProgressCircle',
   decorators: [withKnobs],
   component: ProgressCircle,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof ProgressCircle>
 
 export const ProgressCircleExample: FunctionComponent = () => (
   <Box direction="row">

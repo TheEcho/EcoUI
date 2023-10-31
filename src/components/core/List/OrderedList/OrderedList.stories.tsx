@@ -3,11 +3,13 @@ import React, { FunctionComponent } from 'react'
 import { Box, Text } from '../../../core'
 import { ListItem } from '../ListItem/ListItem'
 import { OrderedList } from './OrderedList'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Lists/Ordered List',
   component: OrderedList,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof OrderedList>
 
 export const SimpleOrderedList: FunctionComponent = () => (
   <Box padding="small">

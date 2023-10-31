@@ -6,12 +6,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { Box, Heading, Icon, Image, Paragraph, Text } from '../../core'
 import NavGrid from './NavGrid'
 import { NavGridItem } from './NavGridItem'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/NavGrid',
   decorators: [withKnobs],
   component: NavGrid,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof NavGrid>
 
 const onNavGridItemClick = action('navGridItem onClick')
 

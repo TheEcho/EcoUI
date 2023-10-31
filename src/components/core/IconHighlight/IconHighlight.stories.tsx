@@ -4,12 +4,14 @@ import { select, withKnobs } from '@storybook/addon-knobs'
 
 import { Box, Icon } from '../../core'
 import { IconHighlight } from './IconHighlight'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/IconHighlight',
   decorators: [withKnobs],
   component: IconHighlight,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof IconHighlight>
 
 type RoundEnum = 'none' | 'normal' | 'full'
 type ColorEnum = 'icon-blue' | 'icon-green' | 'icon-yellow'

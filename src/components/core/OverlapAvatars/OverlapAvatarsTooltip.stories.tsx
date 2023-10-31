@@ -4,12 +4,14 @@ import { number, withKnobs } from '@storybook/addon-knobs'
 
 import { OverlapAvatars } from './OverlapAvatars'
 import { OverlapAvatarsTooltip } from './OverlapAvatarsTooltip'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/OverlapAvatars',
   decorators: [withKnobs],
   component: OverlapAvatarsTooltip,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof OverlapAvatarsTooltip>
 
 const items = [
   { title: 'Arthur Pendragon' },

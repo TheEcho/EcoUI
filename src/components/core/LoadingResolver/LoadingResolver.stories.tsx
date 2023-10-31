@@ -2,11 +2,13 @@ import React, { FunctionComponent, useEffect, useState } from 'react'
 
 import { Box, Text } from '..'
 import { LoadingResolver } from './LoadingResolver'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/LoadingResolver',
   component: LoadingResolver,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof LoadingResolver>
 
 const ALL_ITEMS = ['123', '234']
 

@@ -5,11 +5,13 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { Box } from '../../core'
 import { Select } from './Select'
 import { SelectOption } from './SelectOption'
+import { Meta } from '@storybook/react'
 export default {
   title: 'Core/Form/Select',
   decorators: [withKnobs],
   component: Select,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Select>
 
 const OPTIONS = [
   'Un ascenseur en panne',

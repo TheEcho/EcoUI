@@ -119,24 +119,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     let loadingContent
     if (loading) {
-      let loadingColor: TColor = 'text-lighter'
-      switch (variant) {
-        case 'primary':
-          loadingColor = 'text-lighter'
-          break
-        case 'secondary':
-          loadingColor = 'text-dark'
-          break
-        case 'outline':
-          loadingColor = color ?? colorVariant
-          break
-        case 'ghost':
-          loadingColor = 'text-light'
-          break
-        case 'text':
-          loadingColor = 'text-light'
-          break
-      }
+      let loadingColor: TColor = 'transparent'
 
       let loadingSize: TSVGSizeEnum = 'small'
       switch (buttonSize) {

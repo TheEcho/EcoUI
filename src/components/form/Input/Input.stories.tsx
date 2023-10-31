@@ -6,12 +6,14 @@ import { Box } from '../../core/Box'
 import { Heading } from '../../core/Heading'
 import { Icon } from '../../core/Icon'
 import { Input } from './Input'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/Input',
   decorators: [withKnobs],
   component: Input,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Input>
 
 export const Default: FunctionComponent = () => (
   <Box direction="column" gap="large" padding="xlarge">

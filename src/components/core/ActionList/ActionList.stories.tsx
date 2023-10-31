@@ -6,12 +6,14 @@ import { Box, Text } from '../../core'
 import { ActionList } from './ActionList'
 import { ActionListItem, ActionListItemProps } from './ActionListItem'
 import { ActionListSection, ActionListSectionProps } from './ActionListSection'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/ActionList',
   decorators: [withKnobs],
   component: ActionList,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof ActionList>
 
 export const NormalActionList: FunctionComponent = () => (
   <Box margin="small" width={11.8}>

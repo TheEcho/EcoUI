@@ -6,10 +6,13 @@ import { Box } from '../Box'
 import { CardSection } from '../Card'
 import { Text } from '../Text'
 import { Drop } from './Drop'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Drop',
-}
+  component: Drop,
+  tags: ['autodocs'],
+} satisfies Meta<typeof Drop>
 
 export const DropClassic: FunctionComponent = () => {
   const [isDropOpen, setIsDropOpen] = useState(false)

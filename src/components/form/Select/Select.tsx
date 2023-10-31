@@ -1,4 +1,4 @@
-import { FunctionComponent, forwardRef, useCallback } from 'react'
+import { FunctionComponent, PropsWithChildren, forwardRef, useCallback } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 import { StyledContainer, StyledIcon, StyledSelect } from './Select.styled'
@@ -11,7 +11,7 @@ export type SelectProps = {
   disabled?: boolean
 }
 
-export const Select = forwardRef<HTMLSelectElement, SelectProps>(({ name, ...rest }, ref) => {
+export const Select = forwardRef<HTMLSelectElement, PropsWithChildren<SelectProps>>(({ name, ...rest }, ref) => {
   return (
     <StyledContainer
       align="center"

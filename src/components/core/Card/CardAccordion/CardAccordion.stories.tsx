@@ -8,12 +8,14 @@ import { CardAccordionAction } from './CardAccordionActions/CardAccordionAction'
 import { CardAccordionActions } from './CardAccordionActions/CardAccordionActions'
 import { CardAccordionContent } from './CardAccordionContent/CardAccordionContent'
 import { CardAccordionHeader } from './CardAccordionHeader/CardAccordionHeader'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Card/CardAccordion',
   decorators: [withKnobs],
   component: CardAccordion,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof CardAccordion>
 
 export const Simple: FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false)

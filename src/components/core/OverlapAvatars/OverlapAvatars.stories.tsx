@@ -3,12 +3,14 @@ import React, { FC } from 'react'
 import { number, withKnobs } from '@storybook/addon-knobs'
 
 import { OverlapAvatars } from './OverlapAvatars'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/OverlapAvatars',
   decorators: [withKnobs],
   component: OverlapAvatars,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof OverlapAvatars>
 
 const items = [
   { title: 'Arthur Pendragon' },

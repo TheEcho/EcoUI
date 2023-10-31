@@ -5,12 +5,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { CardSection } from '../../core/Card/CardWithSection'
 import { Heading } from '../../core/Heading'
 import { DatePicker } from './DatePicker'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/DatePicker',
   decorators: [withKnobs],
   component: DatePicker,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof DatePicker>
 
 export const Default: FunctionComponent = () => {
   const [selectedDate, setSelectedDate] = useState(new Date())

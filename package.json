@@ -12,7 +12,9 @@
   ],
   "scripts": {
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
-    "build": "rm -rf dist && rollup -c --bundleConfigAsCjs"
+    "build": "rm -rf dist && rollup -c --bundleConfigAsCjs",
+    "storybook": "storybook dev -p 6006 --ci",
+    "build-storybook": "storybook build"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -67,6 +69,16 @@
     "@rollup/plugin-node-resolve": "15.2.1",
     "@rollup/plugin-terser": "0.4.4",
     "@rollup/plugin-typescript": "11.1.4",
+    "@storybook/addon-essentials": "^7.5.2",
+    "@storybook/addon-interactions": "^7.5.2",
+    "@storybook/addon-knobs": "7.0.2",
+    "@storybook/addon-links": "^7.5.2",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/addon-themes": "7.5.2",
+    "@storybook/blocks": "^7.5.2",
+    "@storybook/nextjs": "^7.5.2",
+    "@storybook/react": "^7.5.2",
+    "@storybook/testing-library": "^0.2.2",
     "@types/react": "18.2.22",
     "@types/react-datepicker": "4.15.1",
     "@types/react-dom": "18.2.14",
@@ -81,6 +93,7 @@
     "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-simple-import-sort": "10.0.0",
+    "eslint-plugin-storybook": "0.6.15",
     "eslint-plugin-unused-imports": "3.0.0",
     "next": "13.5.3",
     "prettier": "3.0.3",
@@ -89,6 +102,7 @@
     "rollup": "3.29.3",
     "rollup-plugin-dts": "6.0.2",
     "rollup-plugin-peer-deps-external": "2.2.4",
+    "storybook": "^7.5.2",
     "typescript": "5.2.2",
     "uuid": "9.0.1"
   },

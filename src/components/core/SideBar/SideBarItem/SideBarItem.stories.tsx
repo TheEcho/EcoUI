@@ -7,12 +7,14 @@ import { Badge } from '../../Badge'
 import Box from '../../Box'
 import { SideBar } from '../SideBar'
 import { SideBarItem } from './SideBarItem'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/SideBarItem',
   decorators: [withKnobs],
   component: SideBarItem,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof SideBarItem>
 
 const onItemClick = action('sideBarItem onClick')
 

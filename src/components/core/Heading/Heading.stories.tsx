@@ -6,12 +6,14 @@ import { select, text, withKnobs } from '@storybook/addon-knobs'
 import { theme } from '../../../shared/tokens'
 import { Box } from '../../core'
 import { Heading, StyledHeadingComponents, THeadingVariant } from './Heading'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Heading',
   decorators: [withKnobs],
   component: Heading,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Heading>
 
 const allHeading = Object.keys(StyledHeadingComponents) as THeadingVariant[]
 

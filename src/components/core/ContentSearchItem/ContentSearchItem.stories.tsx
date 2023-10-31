@@ -1,16 +1,20 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 
 import styled from '@emotion/styled'
+import { HomeModernIcon } from '@heroicons/react/24/outline'
 
 import { Box } from '../Box'
 import { CircleIcon } from '../CircleIcon'
 import { Text } from '../Text'
 import { ContentSearchItem } from './ContentSearchItem'
+import { Meta } from '@storybook/react'
+import Icon from '../Icon'
 
 export default {
   title: 'Core/Form/ContentSearchItem',
   component: ContentSearchItem,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof ContentSearchItem>
 
 const Div = styled.div({
   outline: '1px solid black',
@@ -53,8 +57,7 @@ export const ItemWithSubtitleAndDescriptionAndIcon: FC = () => {
       <ContentSearchItem
         icon={
           <CircleIcon
-            icon="far fa-house-chimney-user"
-            // icon="far fa-check"
+            icon={<Icon icon={HomeModernIcon} />}
             size="large"
             color="icon-blue"
             iconColor="background"
@@ -74,7 +77,7 @@ export const ItemWithSubtitleAndDescriptionAndIconAndBadge: FC = () => {
       <ContentSearchItem
         icon={
           <CircleIcon
-            icon="far fa-house-chimney-user"
+            icon={<Icon icon={HomeModernIcon} />}
             size="large"
             color="icon-blue"
             iconColor="background"

@@ -4,11 +4,13 @@ import { Box, Text } from '../../../core'
 import { DescriptionList } from './DescriptionList'
 import { DescriptionListDescription } from './DescriptionListDescription'
 import { DescriptionListTitle } from './DescriptionListTitle'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Lists/Description List',
   component: DescriptionList,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof DescriptionList>
 
 export const SimpleDescriptionList: FunctionComponent = () => (
   <Box padding="small">

@@ -5,12 +5,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Box, Button, Heading, Link, Paragraph } from '../../core'
 import { Card, CardSection, CardWithSection } from '.'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Card',
   decorators: [withKnobs],
   component: Card,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Card>
 
 export const Simple: FunctionComponent = () => (
   <Box background="background-light" padding="medium">

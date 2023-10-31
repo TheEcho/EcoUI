@@ -6,12 +6,14 @@ import Box from '../Box'
 import { Heading } from '../Heading'
 import { Paragraph } from '../Paragraph'
 import { Grid } from './Grid'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Grid',
   decorators: [withKnobs],
   component: Grid,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof Grid>
 
 const buildItems = (length: number): ReactElement => {
   const items: ReactElement[] = []

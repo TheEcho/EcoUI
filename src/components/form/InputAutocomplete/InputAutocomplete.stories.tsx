@@ -2,11 +2,14 @@ import React, { FunctionComponent, useState } from 'react'
 
 import { Box, Heading } from '../../'
 import { InputAutocomplete, TInputAutoCompleteItemWithAction } from '.'
+import { ClockIcon } from '@heroicons/react/24/outline'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Form/InputAutocomplete',
   component: InputAutocomplete,
-}
+  tags: ['autodocs'],
+} satisfies Meta<typeof InputAutocomplete>
 
 const items = ['aze', 'rty', 'uio', 'fgh', 'mlj']
 const itemsWithAction: TInputAutoCompleteItemWithAction[] = [
@@ -40,7 +43,7 @@ const itemsWithAction: TInputAutoCompleteItemWithAction[] = [
     label: 'Edit timestamp',
     value: 'edit-timestamp',
     role: 'action',
-    icon: 'icon-clock',
+    icon: <ClockIcon />,
   },
 ]
 
