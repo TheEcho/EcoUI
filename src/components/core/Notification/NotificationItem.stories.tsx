@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 
+import { ArchiveBoxIcon } from '@heroicons/react/24/outline'
 import { withKnobs } from '@storybook/addon-knobs'
 
 import { Avatar } from '../Avatar'
@@ -26,7 +27,7 @@ const NotificationTitle: FC = () => {
     <Box direction="row" flex={false} gap="small" flexWrap="true">
       <Text weight="medium">Arthur Pendragon</Text>
       <Text color="text-light">a laissé un nouveau commentaire dans</Text>
-      <Text color="secondary">Contrat de protection Juridique</Text>
+      <Text color="secondary">La boite au lettre</Text>
     </Box>
   )
 }
@@ -46,7 +47,7 @@ const NotificationIcon: FC = () => {
 const NotificationAction: FC = () => {
   return (
     <Button
-      icon={<Icon icon="far fa-box-archive" size="small" />}
+      icon={<Icon icon={<ArchiveBoxIcon />} size="small" />}
       variant="text"
       buttonSize="tiny"
       onClick={async e => {
@@ -59,7 +60,7 @@ const NotificationAction: FC = () => {
 
 const subtitle = (
   <Box direction="row" gap="small">
-    <Text size="small">{`· 24, rue Volga 75100 Paris`}</Text>
+    <Text size="small">{`· 24, rue de la Comedie, 75123 Paris`}</Text>
   </Box>
 )
 
@@ -121,7 +122,7 @@ const NotificationItemWithFooter: FC<{ isNew?: boolean }> = ({ isNew }) => {
       footer={
         <Box direction="row" marginTop="sm-medium" gap="sm-medium">
           <Button variant="primary" label="Répondre" buttonSize="small" />
-          <Button variant="secondary" label="Voir le dossier" buttonSize="small" />
+          <Button variant="secondary" label="Voir le message" buttonSize="small" />
         </Box>
       }
     />

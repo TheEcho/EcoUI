@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+import { LockClosedIcon, BellAlertIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import { action } from '@storybook/addon-actions'
 
@@ -24,7 +25,7 @@ const removableFilterClick = action('removableFilter Click')
 
 export const Categories: FunctionComponent = () => (
   <>
-    <Tag label="Travaux votés en Assemblée Générale" color="icon-green" size="xsmall" />
+    <Tag label="En cours" color="icon-green" size="xsmall" />
     <Tag label="Ouvert" color="text-light" size="xsmall" icon="" />
   </>
 )
@@ -37,7 +38,7 @@ export const OutlineTag = () => (
     reverse
     label="22"
     textColor="primary"
-    icon={<Icon icon="icon-alert" color="primary" size="small" />}
+    icon={<Icon icon={<BellAlertIcon />} color="primary" size="small" />}
     size="xsmall"
   />
 )
@@ -45,27 +46,27 @@ export const OutlineTag = () => (
 export const CategoriesWithIcon: FunctionComponent = () => (
   <>
     <Tag
-      label="Conseil Syndical"
+      label="France"
       color="background-dark"
       reverse
       size="xsmall"
       textColor="text"
-      icon={<Icon icon="icon-lock" size="small" />}
+      icon={<Icon icon={<LockClosedIcon />} size="small" />}
     />
     <Tag
-      label="Conseil Syndical"
+      label="France"
       color="text-light"
       reverse
       size="xsmall"
-      icon={<Icon icon="icon-lock" color="background-lighter" size="small" />}
+      icon={<Icon icon={<LockClosedIcon />} color="background-lighter" size="small" />}
     />
     <Tag
-      label="Conseil Syndical"
-      title="Conseil Syndical de Haute-Garonne"
+      label="France"
+      title="Haute-Garonne"
       color="text-light"
       reverse={true}
       size="xsmall"
-      icon={<Icon icon="icon-lock" color="background-lighter" size="small" />}
+      icon={<Icon icon={<LockClosedIcon />} color="background-lighter" size="small" />}
     />
   </>
 )
@@ -92,16 +93,16 @@ export const CategoriesWithThumbnail: FunctionComponent = () => (
 
 export const RemovableFilter: FunctionComponent = () => (
   <RemovableFilterTag
-    label="Conseil Syndical"
+    label="France"
     size="small-very-comfy"
-    icon={<Icon icon="icon-close" color="background-lighter" size="small" />}
+    icon={<Icon icon={<XMarkIcon />} color="background-lighter" size="small" />}
     onClick={removableFilterClick}
   />
 )
 
 export const TagWithEllipsis: FunctionComponent = () => (
   <Tag
-    label="Travaux votés en Assemblée Générale"
+    label="En cours"
     color="icon-green"
     ellipsis
     maxWidth={10}
@@ -117,7 +118,7 @@ export const TagRounded: FunctionComponent = () => (
     color={['primary', 10]}
     textColor="primary"
     weight="medium"
-    icon={<Icon color="primary" icon="icon-close" size="small" />}
+    icon={<Icon color="primary" icon={<XMarkIcon />} size="small" />}
     ellipsis
     rounded
   />

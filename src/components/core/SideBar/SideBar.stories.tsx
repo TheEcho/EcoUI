@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 
 import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs'
+import { HomeIcon, CreditCardIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import { Badge, Box, Button, Icon, Text } from '../../core'
 import SideBar from './SideBar'
@@ -28,35 +29,33 @@ export const SideBarExample: FunctionComponent = () => (
 
       <SideBarSection title="Mon Portail">
         <SideBarItem
-          icon={<Icon icon="sidebar-icon-home" color="primary" />}
+          icon={<Icon icon={<HomeIcon />} color="primary" />}
           title="Accueil"
           badge={<Badge label="1" />}
           onClick={onItemClick}
           active
         />
         <SideBarItem
-          icon={<Icon icon="sidebar-icon-payments" />}
+          icon={<Icon icon={<CreditCardIcon />} />}
           title="Paiements"
           badge={<Badge label="1" background="background-darker" color="text" />}
           onClick={onItemClick}
         />
-        <SideBarItem title="Infos Pratiques" icon={<Icon icon="sidebar-icon-infos" />} />
-        <SideBarItem title="Préférences" icon={<Icon icon="sidebar-icon-preferences" />} />
+        <SideBarItem title="Information" />
+        <SideBarItem title="Settings" />
       </SideBarSection>
-      <SideBarSection title="Copropriété">
-        <SideBarItem title="Dossier" icon={<Icon icon="sidebar-icon-files" />} />
-        <SideBarItem title="Comptabilité" icon={<Icon icon="sidebar-icon-compta" />} />
-        <SideBarItem title="Contrat" icon={<Icon icon="sidebar-icon-contracts" />} />
-        <SideBarItem title="Documents" icon={<Icon icon="sidebar-icon-documents" />} />
-        <SideBarItem title="Copropriétaires" icon={<Icon icon="sidebar-icon-owners" />} />
+      <SideBarSection title="Category">
+        <SideBarItem title="Invoice" />
+        <SideBarItem title="Contract" />
+        <SideBarItem title="Files" />
+        <SideBarItem title="User" />
       </SideBarSection>
-      <SideBarSection title="Conseil Syndical">
+      <SideBarSection title="Groups">
         <SideBarItem
           title="Validation"
-          icon={<Icon icon="sidebar-icon-files" />}
           badge={<Badge label="2" background="background-darker" color="text" />}
         />
-        <SideBarItem title="2 de plus..." icon={<Icon icon="icon-dots" />} />
+        <SideBarItem title="2 de plus..." />
       </SideBarSection>
     </SideBar>
   </Box>
@@ -66,33 +65,29 @@ export const SideBarWithoutTitleExample: FunctionComponent = () => (
   <Box width={25.6} height={76.8}>
     <SideBar background="background-lighter" elevation="medium">
       <Box flex={false} direction="row" justify="between">
-        <Icon color="primary" size="xlarge" icon="icon-bellman-red" />
         <Button
           onClick={onClickClose}
           variant="text"
-          icon={<Icon size="large" icon="icon-close" color="text"></Icon>}
+          icon={<Icon size="large" icon={<XMarkIcon />} color="text"></Icon>}
         />
       </Box>
       <SideBarSection itemsGap="lg-medium">
         <SideBarItem
-          icon={<Icon icon="far fa-folders" size="medium" color="primary" />}
-          title="Dossiers"
+          title="Files"
           weight="medium"
           size="large"
           onClick={onItemClick}
           active
         />
         <SideBarItem
-          icon={<Icon icon="icon-property" size="medium" color="text-light" />}
-          title="Copropriétés"
+          title="Users"
           color="text-light"
           size="large"
           onClick={onItemClick}
         />
         <SideBarItem
-          title="Prestataires"
+          title="Invoice"
           color="text-light"
-          icon={<Icon icon="icon-third-party" size="medium" color="text-light" />}
           size="large"
           onClick={onItemClick}
         />
@@ -110,35 +105,32 @@ export const SideBarWithSeparators: FunctionComponent = () => (
 
       <SideBarSection title="Mon Portail">
         <SideBarItem
-          icon={<Icon icon="sidebar-icon-home" color="primary" />}
           title="Accueil"
           badge={<Badge label="1" />}
           onClick={onItemClick}
           active
         />
         <SideBarItem
-          icon={<Icon icon="sidebar-icon-payments" />}
           title="Paiements"
           badge={<Badge label="1" background="background-darker" color="text" />}
           onClick={onItemClick}
         />
-        <SideBarItem title="Infos Pratiques" icon={<Icon icon="sidebar-icon-infos" />} />
-        <SideBarItem title="Préférences" icon={<Icon icon="sidebar-icon-preferences" />} />
+        <SideBarItem title="Infos Pratiques" />
+        <SideBarItem title="Préférences" />
       </SideBarSection>
       <SideBarSection title="Copropriété">
-        <SideBarItem title="Dossier" icon={<Icon icon="sidebar-icon-files" />} />
-        <SideBarItem title="Comptabilité" icon={<Icon icon="sidebar-icon-compta" />} />
-        <SideBarItem title="Contrat" icon={<Icon icon="sidebar-icon-contracts" />} />
-        <SideBarItem title="Documents" icon={<Icon icon="sidebar-icon-documents" />} />
-        <SideBarItem title="Copropriétaires" icon={<Icon icon="sidebar-icon-owners" />} />
+        <SideBarItem title="Dossier" />
+        <SideBarItem title="Comptabilité" />
+        <SideBarItem title="Contrat" />
+        <SideBarItem title="Documents" />
+        <SideBarItem title="Copropriétaires" />
       </SideBarSection>
       <SideBarSection title="Conseil syndical">
         <SideBarItem
           title="Validation"
-          icon={<Icon icon="sidebar-icon-files" />}
           badge={<Badge label="2" background="background-darker" color="text" />}
         />
-        <SideBarItem title="2 de plus..." icon={<Icon icon="icon-dots" />} />
+        <SideBarItem title="2 de plus..." />
       </SideBarSection>
     </SideBar>
   </Box>
@@ -153,35 +145,32 @@ export const SideBarWithoutTitlesWithSeparators: FunctionComponent = () => (
 
       <SideBarSection>
         <SideBarItem
-          icon={<Icon icon="sidebar-icon-home" color="primary" />}
           title="Accueil"
           badge={<Badge label="1" />}
           onClick={onItemClick}
           active
         />
         <SideBarItem
-          icon={<Icon icon="sidebar-icon-payments" />}
           title="Paiements"
           badge={<Badge label="1" background="background-darker" color="text" />}
           onClick={onItemClick}
         />
-        <SideBarItem title="Infos Pratiques" icon={<Icon icon="sidebar-icon-infos" />} />
-        <SideBarItem title="Préférences" icon={<Icon icon="sidebar-icon-preferences" />} />
+        <SideBarItem title="Infos Pratiques" />
+        <SideBarItem title="Préférences" />
       </SideBarSection>
       <SideBarSection>
-        <SideBarItem title="Dossier" icon={<Icon icon="sidebar-icon-files" />} />
-        <SideBarItem title="Comptabilité" icon={<Icon icon="sidebar-icon-compta" />} />
-        <SideBarItem title="Contrat" icon={<Icon icon="sidebar-icon-contracts" />} />
-        <SideBarItem title="Documents" icon={<Icon icon="sidebar-icon-documents" />} />
-        <SideBarItem title="Copropriétaires" icon={<Icon icon="sidebar-icon-owners" />} />
+        <SideBarItem title="Dossier" />
+        <SideBarItem title="Comptabilité" />
+        <SideBarItem title="Contrat" />
+        <SideBarItem title="Documents" />
+        <SideBarItem title="Copropriétaires" />
       </SideBarSection>
       <SideBarSection>
         <SideBarItem
           title="Validation"
-          icon={<Icon icon="sidebar-icon-files" />}
           badge={<Badge label="2" background="background-darker" color="text" />}
         />
-        <SideBarItem title="2 de plus..." icon={<Icon icon="icon-dots" />} />
+        <SideBarItem title="2 de plus..." />
       </SideBarSection>
     </SideBar>
   </Box>

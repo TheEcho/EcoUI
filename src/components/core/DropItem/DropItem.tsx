@@ -25,7 +25,6 @@ export type DropItemProps = {
   href?: string | undefined
   /**
    * icon displayed at start of DropItem
-   * @default "critical"
    */
   icon?: ReactNode
   /**
@@ -68,7 +67,6 @@ export const DropItem: FunctionComponent<DropItemProps> = ({
   return (
     <>
       {href ? (
-        // LinkTo would be nice here but it's not available (it's in the 'frontend' module)
         <NextLink href={href}>
           <a href={href}>{content}</a>
         </NextLink>

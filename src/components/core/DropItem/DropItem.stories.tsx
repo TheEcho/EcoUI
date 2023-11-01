@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+import { LinkIcon } from '@heroicons/react/24/outline'
 
 import { withKnobs } from '@storybook/addon-knobs'
 
@@ -31,7 +32,7 @@ export const WithIcon: FunctionComponent = () => {
       <DropItem
         title="Bonjour"
         onClick={handleClick}
-        icon={<Icon icon="ext-link" color="text-light" />}
+        icon={<Icon icon={<LinkIcon />} color="text-light" />}
       />
     </Box>
   )

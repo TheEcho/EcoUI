@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+import { HomeIcon } from '@heroicons/react/24/outline'
 
 import { withKnobs } from '@storybook/addon-knobs'
 
@@ -22,7 +23,7 @@ export const SideBarSectionExample: FunctionComponent = () => (
     <SideBar>
       <SideBarSection title="Accueil">
         <SideBarItem
-          icon={<Icon icon="sidebar-icon-home" />}
+          icon={<Icon icon={<HomeIcon />} />}
           title="Accueil"
           badge={<Badge label="1" />}
         />
