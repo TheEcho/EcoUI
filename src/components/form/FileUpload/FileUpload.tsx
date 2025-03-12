@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, useCallback, useRef, useState } from 'react'
+import { ChangeEvent, FunctionComponent, useCallback, useRef, useState } from 'react'
 
 import { useSmallMediaQuery } from '../../../utils/_hooks/useMediaQuery'
 import { Box, Button, Text } from '../../core'

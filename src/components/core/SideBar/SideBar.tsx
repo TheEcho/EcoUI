@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
+import { Children, FunctionComponent, PropsWithChildren, ReactNode } from 'react'
 
 import { Box } from '../../core'
 import { TStyledBoxProps } from '../Box/Box.styled'
@@ -84,7 +84,7 @@ export const SideBar: FunctionComponent<SideBarProps> = ({
   const sidebarSectionComponents: ReactNode[] = []
   const otherComponents: ReactNode[] = []
 
-  React.Children.forEach(children, (item: ReactNode) => {
+  Children.forEach(children, (item: ReactNode) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     if (item?.props.componentName === 'SideBarSection') {

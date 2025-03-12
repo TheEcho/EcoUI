@@ -1,5 +1,5 @@
 import { identity } from 'lodash'
-import React, { FC, useMemo, useState } from 'react'
+import { FC, useMemo, useState } from 'react'
 
 import styled from '@emotion/styled'
 import { HomeIcon } from '@heroicons/react/24/outline'

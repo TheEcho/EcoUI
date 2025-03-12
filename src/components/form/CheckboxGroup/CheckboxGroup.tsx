@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, PropsWithChildren, useState } from 'react'
+import { ChangeEvent, FunctionComponent, PropsWithChildren, useState } from 'react'
 
 import { Box } from '../../core'
 import { TStyledBoxProps } from '../../core/Box/Box.styled'

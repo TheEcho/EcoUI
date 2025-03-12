@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PropsWithChildren, useMemo } from 'react'
+import { FunctionComponent, PropsWithChildren, useMemo } from 'react'
 
 import { Box } from '../Box'
 import { Paragraph } from '../Paragraph'

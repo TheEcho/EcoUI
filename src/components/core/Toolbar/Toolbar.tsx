@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
+import { Children, cloneElement, FunctionComponent, PropsWithChildren, ReactElement, ReactNode } from 'react'
 
 import { Box } from '../../core'
 import {
@@ -14,20 +14,20 @@ type ToolbarProps = PropsWithChildren<{
 
 const cloneElementsWithCss = (elements: ReactNode[]): ReactNode | ReactNode[] => {
   if (elements.length === 1) {
-    return React.cloneElement(elements[0] as React.ReactElement<any>, { className: 'top bottom' })
+    return cloneElement(elements[0] as ReactElement<any>, { className: 'top bottom' })
   } else if (elements.length > 0) {
-    const firstElement = React.cloneElement(elements[0] as React.ReactElement<any>, {
+    const firstElement = cloneElement(elements[0] as ReactElement<any>, {
       css: firstToolbarElementCss,
     })
 
     const middleElements = elements.slice(1, -1).map((element) =>
-      React.cloneElement(element as React.ReactElement<any>, {
+      cloneElement(element as ReactElement<any>, {
         css: middleToolbarElementCss,
       }),
     )
 
-    const lastElement = React.cloneElement(
-      elements[elements.length - 1] as React.ReactElement<any>,
+    const lastElement = cloneElement(
+      elements[elements.length - 1] as ReactElement<any>,
       {
         css: lastToolbarElementCss,
       },
@@ -44,7 +44,7 @@ const cloneElementsWithCss = (elements: ReactNode[]): ReactNode | ReactNode[] =>
  * - Input
  */
 export const Toolbar: FunctionComponent<ToolbarProps> = ({ children, ...rest }) => {
-  const childrenWithToolbarCss = cloneElementsWithCss(React.Children.toArray(children))
+  const childrenWithToolbarCss = cloneElementsWithCss(Children.toArray(children))
 
   return <Box {...rest}>{childrenWithToolbarCss}</Box>
 }

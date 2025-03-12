@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { CardProps } from '../Card'
 import { StyledNavGrid } from './NavGrid.styled'

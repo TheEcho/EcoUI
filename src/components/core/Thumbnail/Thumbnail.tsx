@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { BoxProps } from '../Box'
 import { Image, ImageProps } from '../Image'

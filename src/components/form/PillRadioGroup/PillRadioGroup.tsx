@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode, useCallback } from 'react'
+import { FunctionComponent, ReactNode, useCallback } from 'react'
 
 import { Box, Text } from '../../core'
 import { StyledPillRadioGroup, StyledPillRadioItem } from './PillRadioGroup.styled'

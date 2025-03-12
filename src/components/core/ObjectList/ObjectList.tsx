@@ -1,6 +1,6 @@
 import { SerializedStyles } from '@emotion/react'
 import { groupBy, mapValues, omit } from 'lodash'
-import React, { FunctionComponent, ReactNode, useEffect, useRef } from 'react'
+import { createElement, FunctionComponent, ReactNode, useEffect, useRef } from 'react'
 import { ITheme } from '@/index'
 
 import { TColor } from '../../../shared/tokens/color'
@@ -165,25 +165,25 @@ export const ObjectList: FunctionComponent<ObjectListProps> = ({
 
         displayItems = []
         for (const d in nestedData) {
-          const stickyHeader = React.createElement(StickyHeader, {
+          const stickyHeader = createElement(StickyHeader, {
             text: d,
             backgroundColour: groupBackgroundColour,
           })
           const subItems = nestedData[d].map((item: any) =>
-            React.createElement(itemComponent, { ...item, key: item.id }),
+            createElement(itemComponent, { ...item, key: item.id }),
           )
 
           displayItems.push(...[stickyHeader, ...subItems])
         }
       } else {
         displayItems = data.map((item: any) =>
-          React.createElement(itemComponent, { ...item, key: item.id }),
+          createElement(itemComponent, { ...item, key: item.id }),
         )
       }
     }
 
     if (!data.length) {
-      displayItems = React.createElement(emptyComponent)
+      displayItems = createElement(emptyComponent)
     }
   }
 
@@ -203,14 +203,14 @@ export const ObjectList: FunctionComponent<ObjectListProps> = ({
       {displaySuffixElements &&
         prefixElements?.map((element, index) => {
           return typeof element === 'function'
-            ? React.createElement(element, { key: index })
+            ? createElement(element, { key: index })
             : element
         })}
 
       {!shouldDisplayLoading && !!data && displayItems}
       {!!onLoadMore && <div ref={ref}></div>}
-      {!shouldDisplayLoading && !data && React.createElement(emptyComponent)}
-      {shouldDisplayLoading && React.createElement(loadingComponent)}
+      {!shouldDisplayLoading && !data && createElement(emptyComponent)}
+      {shouldDisplayLoading && createElement(loadingComponent)}
 
       {displaySuffixElement && suffixElement}
 

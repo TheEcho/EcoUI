@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { useSmallMediaQuery } from '../../../utils/_hooks/useMediaQuery'
 import { Avatar, Box } from '../../core'

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PropsWithChildren } from 'react'
+import { FunctionComponent, PropsWithChildren } from 'react'
 
 import { TColor } from '../../../../shared/tokens/color'
 import { StyledOrderedList } from './OrderedList.styled'

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 import { BellIcon } from '@heroicons/react/24/outline'
 
 import { TColor } from '../../../shared/tokens/color'

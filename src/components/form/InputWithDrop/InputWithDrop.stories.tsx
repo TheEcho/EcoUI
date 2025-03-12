@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactElement, ReactNode, useState } from 'react'
+import { FunctionComponent, ReactElement, ReactNode, useState } from 'react'
 
 import { Box, Button, Text } from '../..'
 import { InputWithDrop } from '.'

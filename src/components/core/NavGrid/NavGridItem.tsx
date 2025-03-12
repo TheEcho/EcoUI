@@ -1,4 +1,4 @@
-import React, { ElementType, forwardRef, Fragment, ReactNode } from 'react'
+import { ElementType, forwardRef, Fragment, ReactNode } from 'react'
 
 import { TColor } from '../../../shared/tokens/color'
 import { Box } from '../../core'

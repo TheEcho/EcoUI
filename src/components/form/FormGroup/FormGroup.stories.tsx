@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, ReactElement, ReactNode, forwardRef, useMemo } from 'react'
+import { ChangeEvent, FunctionComponent, ReactElement, ReactNode, forwardRef, useMemo } from 'react'
 
 import { Box, BoxProps } from '../../core/Box'
 import { TextProps } from '../../core/Text'

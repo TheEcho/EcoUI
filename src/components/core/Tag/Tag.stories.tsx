@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import { LockClosedIcon, BellAlertIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import { action } from '@storybook/addon-actions'

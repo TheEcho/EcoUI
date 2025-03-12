@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { color as tokenColor, TColor } from '../../../../shared/tokens/color'
 import { Box, Grid } from '../..'

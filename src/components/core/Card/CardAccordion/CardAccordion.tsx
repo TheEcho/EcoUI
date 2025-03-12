@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactElement, ReactNode, useState } from 'react'
+import { Children, FunctionComponent, ReactElement, ReactNode, useState } from 'react'
 import { ChevronUpIcon } from '@heroicons/react/24/outline'
 
 import { matchComponentName } from '../../../../utils/matchComponentName'
@@ -44,15 +44,15 @@ export const CardAccordion: FunctionComponent<CardAccordionProps> = ({
   let contentToDisplay
   let actionToDisplay
 
-  const headerFromChildren = React.Children.toArray(children).find((element) => {
+  const headerFromChildren = Children.toArray(children).find((element) => {
     return matchComponentName(element, 'CardAccordionHeader')
   })
 
-  const contentFromChildren = React.Children.toArray(children).find((element) => {
+  const contentFromChildren = Children.toArray(children).find((element) => {
     return matchComponentName(element, 'CardAccordionContent')
   })
 
-  const actionsFromChildren = React.Children.toArray(children).find((element) => {
+  const actionsFromChildren = Children.toArray(children).find((element) => {
     return matchComponentName(element, 'CardAccordionActions')
   })
 

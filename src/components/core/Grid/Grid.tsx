@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { BoxProps } from '../Box'
 import { Container, TGridStyleProps } from './Grid.styled'

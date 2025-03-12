@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react'
+import { forwardRef, PropsWithChildren } from 'react'
 
 import { StyledBox, TStyledBoxProps, TTransitionAnimation } from './Box.styled'
 
@@ -113,7 +113,7 @@ export type BoxProps = PropsWithChildren<{
 /**
  * Box is a flex container component
  */
-export const Box = React.forwardRef<HTMLDivElement, BoxProps>(({ flex = true, ...rest }, ref) => {
+export const Box = forwardRef<HTMLDivElement, BoxProps>(({ flex = true, ...rest }, ref) => {
   return <StyledBox ref={ref} {...rest} flex={flex} />
 })
 

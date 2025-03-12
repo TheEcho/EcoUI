@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 
 import { Box, Heading, Paragraph } from '../../core'
 import { BoxProps } from '../Box'

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import { HandThumbUpIcon } from '@heroicons/react/24/outline'
 
 import { BoxProps, Icon, Text } from '..'

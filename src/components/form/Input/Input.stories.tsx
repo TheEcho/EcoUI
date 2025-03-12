@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react'
+import { FunctionComponent, useState } from 'react'
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { withKnobs } from '@storybook/addon-knobs'

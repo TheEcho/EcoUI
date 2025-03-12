@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import type { Preview } from '@storybook/react'
 import { Global, css, ThemeProvider } from '@emotion/react'
 import global from '../src/shared/global'

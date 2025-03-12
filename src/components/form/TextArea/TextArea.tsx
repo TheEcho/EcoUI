@@ -1,4 +1,4 @@
-import React, { FocusEvent, FunctionComponent, ReactNode, forwardRef, useState } from 'react'
+import { FocusEvent, FunctionComponent, ReactNode, forwardRef, useState } from 'react'
 
 import { TTextSize, TTextWeight } from '../../../shared/tokens/text'
 import { Text } from '../../core'

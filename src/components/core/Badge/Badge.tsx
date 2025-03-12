@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 
 import { TBorderRadiusEnum, TBorderSizeEnum } from '../../../shared/tokens/border'
 import { TColor } from '../../../shared/tokens/color'

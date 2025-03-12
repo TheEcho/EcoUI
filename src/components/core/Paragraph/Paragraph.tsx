@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PropsWithChildren } from 'react'
+import { FunctionComponent, PropsWithChildren } from 'react'
 
 import { StyledParagraph, TStyledParagraphProps } from './Paragraph.styled'
 

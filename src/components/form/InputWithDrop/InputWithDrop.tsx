@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, forwardRef, useEffect, useRef } from 'react'
+import { PropsWithChildren, forwardRef, useEffect, useRef } from 'react'
 import { useCallback } from 'react'
 
 import { Drop } from '../../core'

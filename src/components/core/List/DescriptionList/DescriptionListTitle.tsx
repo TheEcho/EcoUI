@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { Text } from '../../../core'
 import { StyledDescriptionListTitle } from './DescriptionListTitle.styled'

@@ -1,5 +1,5 @@
 import fr from 'date-fns/locale/fr'
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import ReactDatePicker, { registerLocale } from 'react-datepicker'
 
 import { DatePickerWrapper } from './DatePicker.styled'

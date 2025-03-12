@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { withKnobs } from '@storybook/addon-knobs'
 import * as heroiconsOutline from '@heroicons/react/24/outline'

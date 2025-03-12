@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactElement, ReactNode, useMemo } from 'react'
+import { createElement, FunctionComponent, ReactElement, ReactNode, useMemo } from 'react'
 
 import { Box } from '..'
 import { BoxProps } from '../Box'
@@ -40,7 +40,7 @@ export function LoadingResolver<T>({
   }, [dataWaitingToLoad])
 
   if (!areAllPropsLoaded) {
-    return <>{loadingComponent ? React.createElement(loadingComponent) : ''}</>
+    return <>{loadingComponent ? createElement(loadingComponent) : ''}</>
   }
 
   return (

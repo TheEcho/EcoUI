@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
+import { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
 
 import { Box, Text } from '../../../core'
 import { BoxProps } from '../../Box'

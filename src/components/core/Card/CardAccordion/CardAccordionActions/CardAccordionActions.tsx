@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PropsWithChildren } from 'react'
+import { Children, FunctionComponent, PropsWithChildren } from 'react'
 
 import { matchComponentName } from '../../../../../utils/matchComponentName'
 import { Text } from '../../../Text'
@@ -25,7 +25,7 @@ export const CardAccordionActions: FunctionComponent<CardAccordionActionsProps> 
   onClick,
   children,
 }) => {
-  const contentFromActions = React.Children.toArray(children).filter((element) => {
+  const contentFromActions = Children.toArray(children).filter((element) => {
     return matchComponentName(element, 'CardAccordionAction')
   })
 

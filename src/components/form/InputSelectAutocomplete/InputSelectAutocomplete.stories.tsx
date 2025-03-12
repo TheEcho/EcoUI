@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react'
+import { FunctionComponent, useState } from 'react'
 
 import { ActionListItem, Box, Heading, Icon } from '../../'
 import { InputSelectAutocomplete, TInputSelectAutocompleteItem } from './InputSelectAutocomplete'

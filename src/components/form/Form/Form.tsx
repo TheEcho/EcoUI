@@ -1,4 +1,4 @@
-import React, { BaseSyntheticEvent, FunctionComponent, PropsWithChildren } from 'react'
+import { BaseSyntheticEvent, FunctionComponent, PropsWithChildren } from 'react'
 
 import { StyledForm } from './Form.styled'
 

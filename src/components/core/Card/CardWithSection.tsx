@@ -1,4 +1,4 @@
-import React, { forwardRef, FunctionComponent } from 'react'
+import { forwardRef, FunctionComponent } from 'react'
 
 import styled from '@emotion/styled'
 

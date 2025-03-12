@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, forwardRef, useEffect, useState } from 'react'
+import { ChangeEvent, FunctionComponent, forwardRef, useEffect, useState } from 'react'
 
 import { Box, BoxProps, Text } from '@/index'
 

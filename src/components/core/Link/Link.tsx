@@ -1,4 +1,4 @@
-import React, { ElementType, PropsWithChildren } from 'react'
+import { ElementType, forwardRef, PropsWithChildren } from 'react'
 
 import { StyledLink, StyledLinkProps } from './Link.styled'
 import { IconProps } from '../Icon'
@@ -18,7 +18,7 @@ export type LinkProps = PropsWithChildren<{
  * Link extends Text component
  */
 // eslint-disable-next-line react/display-name
-export const Link = React.forwardRef(
+export const Link = forwardRef(
   (
     {
       label,

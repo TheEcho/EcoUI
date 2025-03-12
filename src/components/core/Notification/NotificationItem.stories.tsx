@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { ArchiveBoxIcon } from '@heroicons/react/24/outline'
 import { withKnobs } from '@storybook/addon-knobs'

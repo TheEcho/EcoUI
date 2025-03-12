@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@emotion/react'
-import React, { FunctionComponent, PropsWithChildren } from 'react'
+import { FunctionComponent, PropsWithChildren } from 'react'
 
 import { ITheme, theme as defaultTheme } from '@/index'
 

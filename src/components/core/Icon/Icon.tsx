@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PropsWithChildren } from 'react'
+import { FunctionComponent, PropsWithChildren } from 'react'
 
 import { svgSizes } from '../../../shared/tokens/svg'
 import { StyledIconContainer, TStyledSvgIconProps } from './Icon.styled'

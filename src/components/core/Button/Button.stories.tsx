@@ -1,8 +1,7 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { ClockIcon, PlayIcon } from '@heroicons/react/24/outline'
 import { action } from '@storybook/addon-actions'
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 
 import { Box, Icon, Text } from '../../core'
 import { Button, ButtonProps } from './Button'
@@ -10,9 +9,18 @@ import { Meta } from '@storybook/react'
 
 export default {
   title: 'Core/Button',
-  decorators: [withKnobs],
   component: Button,
   tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      options: ['primary', 'secondary'],
+      control: { type: 'radio' },
+    },
+    colorVariant: {
+      options: ['primary', 'secondary'],
+      control: { type: 'radio' },
+    },
+  }
 } satisfies Meta<typeof Button>
 
 const onClick = action('button onClick')
@@ -122,43 +130,4 @@ export const withColor: FunctionComponent = (props) => (
       <TextBtn loading color="warning" textColor="warning-ink" />
     </Box>
   </Box>
-)
-
-export const Knobs: FunctionComponent = () => (
-  <Button
-    onClick={onClick}
-    label={text('Label', 'Button')}
-    variant={select(
-      'Variant',
-      {
-        Primary: 'primary',
-        Secondary: 'secondary',
-        Outline: 'outline',
-        Ghost: 'ghost',
-        Text: 'text',
-      },
-      'primary',
-    )}
-    colorVariant={select(
-      'Color Variant',
-      {
-        Primary: 'primary',
-        Secondary: 'secondary',
-      },
-      'primary',
-    )}
-    buttonSize={select(
-      'Size',
-      {
-        Tiny: 'tiny',
-        Small: 'small',
-        Regular: 'regular',
-        Large: 'large',
-        Larger: 'larger',
-      },
-      'regular',
-    )}
-    disabled={boolean('Disabled', false)}
-    loading={boolean('Loading', false)}
-  />
 )

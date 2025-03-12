@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs'

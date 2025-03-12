@@ -1,4 +1,5 @@
-import React, {
+import {
+  cloneElement,
   FunctionComponent,
   PropsWithChildren,
   ReactElement,
@@ -144,7 +145,7 @@ export const DropActions: FunctionComponent<DropActionsProps> = ({
   }
 
   if (dropComponent) {
-    content = React.cloneElement(dropComponent, {
+    content = cloneElement(dropComponent, {
       closePanel: () => setIsDropOpen(false),
       onClick: () => {
         setIsDropOpen(false)

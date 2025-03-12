@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { imagePlaceholders, TImagePlaceholder } from '../../../shared/tokens/imagePlaceholders'
 import { StyledImage, TStyledImageProps } from './Image.styled'

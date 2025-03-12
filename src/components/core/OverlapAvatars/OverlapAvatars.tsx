@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from 'react'
+import { FunctionComponent, useMemo } from 'react'
 
 import { Box } from '../Box'
 import { Overlap } from '../Overlap'

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PropsWithChildren } from 'react'
+import { Children, cloneElement, FunctionComponent, isValidElement, PropsWithChildren, ReactElement } from 'react'
 
 import { StyledOverlap } from './Overlap.styled'
 
@@ -13,10 +13,10 @@ export const Overlap: FunctionComponent<OverlapProps> = ({
   children,
   ...rest
 }) => {
-  const count = React.Children.count(children)
-  const childrenWithProps = React.Children.map(children, (child, idx) => {
-    if (React.isValidElement(child)) {
-      return React.cloneElement(child as React.ReactElement, { style: { zIndex: count - idx } })
+  const count = Children.count(children)
+  const childrenWithProps = Children.map(children, (child, idx) => {
+    if (isValidElement(child)) {
+      return cloneElement(child as ReactElement, { style: { zIndex: count - idx } })
     }
     return child
   })

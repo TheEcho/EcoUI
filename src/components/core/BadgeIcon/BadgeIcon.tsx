@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
 import { TColor } from '../../../shared/tokens/color'
 import { Text } from '../Text'

@@ -1,9 +1,10 @@
-import React, {
+import {
   FunctionComponent,
   ReactNode,
   forwardRef,
   useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -162,7 +163,7 @@ export const InputSelectAutocomplete = forwardRef<HTMLInputElement, TProps>(({
   const actionItems = items.filter(item => item.role === 'action')
   const combineInputdRef = useCombinedRefs(ref, inputRef)
 
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     if (typeof ref === 'function' && inputRef.current) {
       ref(inputRef.current)
     }

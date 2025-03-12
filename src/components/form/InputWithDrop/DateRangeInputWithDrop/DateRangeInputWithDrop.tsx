@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import React, { FunctionComponent, useEffect, useMemo, useState, useCallback } from 'react'
+import { FunctionComponent, useEffect, useMemo, useState, useCallback } from 'react'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 
 import { ENTER } from '../../../../utils/keyBinding'

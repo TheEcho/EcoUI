@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useMemo, useState } from 'react'
+import { Children, FunctionComponent, useEffect, useMemo, useState } from 'react'
 
 import { Box, BoxProps } from '../Box'
 import { Text } from '../Text'
@@ -17,7 +17,7 @@ export const ShowMore: FunctionComponent<ShowMoreProps> = ({
   const [open, setOpen] = useState(false)
   const [isShowMoreHover, setIsShowMoreHover] = useState(false)
 
-  const items = useMemo(() => React.Children.toArray(children), [children])
+  const items = useMemo(() => Children.toArray(children), [children])
   const filteredItems = useMemo(() => items.filter((_, index) => index < itemBeforeHide), [
     items,
     itemBeforeHide,

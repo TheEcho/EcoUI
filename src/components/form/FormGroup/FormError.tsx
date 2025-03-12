@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PropsWithChildren } from 'react'
+import { FunctionComponent, PropsWithChildren } from 'react'
 import { ExclamationCircleIcon } from '@heroicons/react/24/outline'
 
 import { Box, Icon, Text } from '../../core'

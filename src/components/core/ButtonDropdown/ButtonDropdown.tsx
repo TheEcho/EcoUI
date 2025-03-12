@@ -1,4 +1,4 @@
-import React, { ComponentProps, FunctionComponent, ReactNode, useRef, useState } from 'react'
+import { ComponentProps, FunctionComponent, ReactNode, useRef, useState } from 'react'
 
 import { Box, Button } from '../../core'
 import { ActionList, ActionListProps } from '../ActionList'

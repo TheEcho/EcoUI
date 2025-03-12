@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import React, { FunctionComponent, useCallback, useEffect, useState } from 'react'
+import { FunctionComponent, useCallback, useEffect, useState } from 'react'
 
 import { css } from '@emotion/react'
 import { action } from '@storybook/addon-actions'
